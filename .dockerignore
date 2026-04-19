@@ -1,0 +1,36 @@
+# Игнорируем зависимости (они установятся внутри образа через npm ci)
+node_modules
+.pnp
+.pnp.*
+.yarn
+
+# Игнорируем локальные сборки
+.next
+out
+build
+dist
+
+# Игнорируем логи и отладку
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# Игнорируем файлы окружения (в Docker Compose мы передаем их через environment)
+.env
+.env.*
+!.env.example
+
+# Игнорируем Git и настройки IDE
+.git
+.gitignore
+.vscode
+.idea
+.dockerignore
+
+# Игнорируем специфичные файлы ОС
+.DS_Store
+Thumbs.db
+
+# Игнорируем Prisma (если генерируем клиент внутри Docker)
+/lib/generated/prisma

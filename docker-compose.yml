@@ -1,0 +1,44 @@
+services:
+  # Твоя база данных
+  db:
+    image: postgres:15-alpine
+    container_name: bubble-owl-db
+    restart: always
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: supersecretpassword
+      POSTGRES_DB: bubbleowl
+    ports:
+      - "5433:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U admin -d bubbleowl"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        - I18NEXUS_API_KEY=${I18NEXUS_API_KEY}
+    container_name: bubble-owl-app
+    restart: always
+    ports:
+      - "3000:3000"
+    environment:
+      - DATABASE_URL=${DATABASE_URL}
+      - BETTER_AUTH_SECRET=${BETTER_AUTH_SECRET}
+      - BETTER_AUTH_URL=${BETTER_AUTH_URL}
+      - I18NEXUS_API_KEY=${I18NEXUS_API_KEY}
+      - NODE_ENV=production
+    env_file:
+      - .env.production
+    depends_on:
+      db:
+        condition: service_healthy
+
+volumes:
+  postgres_data:
