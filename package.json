@@ -3,15 +3,20 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
+    "dev": "concurrently -n \"next,i18n\" -c \"cyan,magenta\" \"next dev --turbo\" \"i18nexus listen\"",
+    "build": "i18nexus pull && next build",
+    "start": "i18nexus pull && next start",
     "lint": "eslint"
   },
   "dependencies": {
-    "@prisma/client": "^6.19.3",
+    "@prisma/adapter-pg": "^7.7.0",
+    "@prisma/client": "^7.7.0",
     "better-auth": "^1.6.5",
+    "dotenv": "^17.4.2",
+    "lucide-react": "^1.8.0",
     "next": "16.2.4",
+    "next-intl": "^4.9.1",
+    "pg": "^8.20.0",
     "react": "19.2.4",
     "react-dom": "19.2.4"
   },
@@ -20,9 +25,12 @@
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "concurrently": "^9.2.1",
     "eslint": "^9",
     "eslint-config-next": "16.2.4",
-    "prisma": "^6.19.3",
+    "i18nexus": "^3.4.1",
+    "i18nexus-cli": "^4.1.0",
+    "prisma": "^7.7.0",
     "tailwindcss": "^4",
     "typescript": "^5"
   }
