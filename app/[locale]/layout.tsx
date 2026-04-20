@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import ThemeProvider from "@/components/ThemeProvider";
 import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
+import CustomThemeProvider from "@/components/CustomThemeProvider";
 
 type Props = {
   children: React.ReactNode;
@@ -47,29 +47,9 @@ export default async function LocaleLayout ({ children, params }: Props) {
       suppressHydrationWarning
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <head>
-        <script
-          id='theme-switcher'
-          dangerouslySetInnerHTML={{
-            __html: `
-              (function() {
-                try {
-                  var theme = localStorage.getItem('theme');
-                  var supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
-                  if (theme === 'dark' || (!theme && supportDarkMode)) {
-                    document.documentElement.setAttribute('data-theme', 'dark');
-                  } else {
-                    document.documentElement.setAttribute('data-theme', 'light');
-                  }
-                } catch (e) {}
-              })();
-            `,
-          }}
-        />
-      </head>
       <body className='min-h-full flex flex-col'>
         <NextIntlClientProvider>
-          <ThemeProvider>{children}</ThemeProvider>
+          <CustomThemeProvider>{children}</CustomThemeProvider>
         </NextIntlClientProvider>
       </body>
     </html>
