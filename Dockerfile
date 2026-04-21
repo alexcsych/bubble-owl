@@ -21,8 +21,6 @@ WORKDIR /app
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
 
-ARG I18NEXUS_API_KEY
-ENV I18NEXUS_API_KEY=$I18NEXUS_API_KEY
 RUN \
   if [ -f yarn.lock ]; then yarn run build; \
   elif [ -f package-lock.json ]; then npm run build; \

@@ -3,9 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "concurrently -n \"next,i18n\" -c \"cyan,magenta\" \"next dev --turbo\" \"i18nexus listen\"",
-    "build": "i18nexus pull && next build",
-    "start": "i18nexus pull && next start",
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
     "lint": "eslint"
   },
   "dependencies": {

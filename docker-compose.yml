@@ -22,18 +22,15 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-      args:
-        - I18NEXUS_API_KEY=${I18NEXUS_API_KEY}
     container_name: bubble-owl-app
     restart: always
     ports:
       - "3000:3000"
-    environment:
-      - DATABASE_URL=${DATABASE_URL}
-      - BETTER_AUTH_SECRET=${BETTER_AUTH_SECRET}
-      - BETTER_AUTH_URL=${BETTER_AUTH_URL}
-      - I18NEXUS_API_KEY=${I18NEXUS_API_KEY}
-      - NODE_ENV=production
+    # environment:
+    #   - DATABASE_URL=${DATABASE_URL}
+    #   - BETTER_AUTH_SECRET=${BETTER_AUTH_SECRET}
+    #   - BETTER_AUTH_URL=${BETTER_AUTH_URL}
+    #   - NODE_ENV=production
     env_file:
       - .env.production
     depends_on:
