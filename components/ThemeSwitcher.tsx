@@ -1,30 +1,49 @@
 "use client";
 
-import { Sun, Moon } from "lucide-react";
+import { Monitor, Moon, Palette, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
-import { useEffect, useState } from "react";
+import { Button } from "@/components/ui/button";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuLabel,
+  DropdownMenuRadioGroup,
+  DropdownMenuRadioItem,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import { useTranslations } from "next-intl";
 
 export default function ThemeSwitcher () {
-  const [mounted, setMounted] = useState(false);
-  const { setTheme, resolvedTheme } = useTheme();
-
-  useEffect(() => {
-    // eslint-disable-next-line react-hooks/set-state-in-effect
-    setMounted(true);
-  }, []);
-
-  if (!mounted) {
-    return <div className='w-7.5 h-7.5' />;
-  }
-
-  const isDark = resolvedTheme === "dark";
+  const { theme, setTheme } = useTheme();
+  const t = useTranslations("header");
 
   return (
-    <button
-      onClick={() => setTheme(isDark ? "light" : "dark")}
-      className=' text-white p-0.75 font-bold flex items-center justify-center hover:opacity-90 transition-all'
-    >
-      {isDark ? <Moon size={24} /> : <Sun size={24} />}
-    </button>
+    <DropdownMenu>
+      <DropdownMenuTrigger asChild>
+        <Button variant='outline'>
+          <Palette className='h-4 w-4' />
+          {t("theme")}
+        </Button>
+      </DropdownMenuTrigger>
+      <DropdownMenuContent className='w-48'>
+        <DropdownMenuLabel>{t("theme-select")}</DropdownMenuLabel>
+        <DropdownMenuSeparator />
+        <DropdownMenuRadioGroup onValueChange={setTheme} value={theme}>
+          <DropdownMenuRadioItem value='light'>
+            <Sun />
+            {t("themes.light")}
+          </DropdownMenuRadioItem>
+          <DropdownMenuRadioItem value='dark'>
+            <Moon />
+            {t("themes.dark")}
+          </DropdownMenuRadioItem>
+          <DropdownMenuRadioItem value='system'>
+            <Monitor />
+            {t("themes.system")}
+          </DropdownMenuRadioItem>
+        </DropdownMenuRadioGroup>
+      </DropdownMenuContent>
+    </DropdownMenu>
   );
 }
