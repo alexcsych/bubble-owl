@@ -1,8 +1,46 @@
 {
+  "form": {
+    "labels": {
+      "email": "Email",
+      "password": "Password"
+    },
+    "placeholders": {
+      "email": "you@example.com",
+      "password": "••••••••"
+    },
+    "validation": {
+      "invalid-email": "Invalid email address.",
+      "password-too-short": "Password must be at least 6 characters."
+    }
+  },
   "header": {
     "btn-search": "Search",
-    "nav-about-us": "About Us",
-    "nav-catalog": "Catalog",
-    "nav-home": "Home"
+    "language": "Language",
+    "language-select": "Select Language",
+    "languages": {
+      "english": "English",
+      "russian": "Russian",
+      "ukrainian": "Ukrainian"
+    },
+    "nav": {
+      "about-us": "About Us",
+      "catalog": "Catalog",
+      "home": "Home"
+    },
+    "search-placeholder": "I love bubble tea",
+    "theme": "Theme",
+    "themes": {
+      "dark": "Dark",
+      "light": "Light",
+      "system": "System"
+    },
+    "theme-select": "Select theme"
+  },
+  "login-page": {
+    "desc": "Enter your credentials to access your account",
+    "form-submit": "Sign In",
+    "signup-link": "Sign up",
+    "signup-link-desc": "Don't have an account?",
+    "title": "Welcome back"
   }
 }

@@ -1,8 +1,46 @@
 {
+  "form": {
+    "labels": {
+      "email": "Електронна пошта",
+      "password": "Пароль"
+    },
+    "placeholders": {
+      "email": "you@example.com",
+      "password": "••••••••"
+    },
+    "validation": {
+      "invalid-email": "Неправильна адреса електронної пошти.",
+      "password-too-short": "Пароль повинен містити щонайменше 6 символів."
+    }
+  },
   "header": {
     "btn-search": "Пошук",
-    "nav-about-us": "Про нас",
-    "nav-catalog": "Каталог",
-    "nav-home": "Головна"
+    "language": "Мова",
+    "language-select": "Виберіть мову",
+    "languages": {
+      "english": "Англійська",
+      "russian": "Російська",
+      "ukrainian": "Українська"
+    },
+    "nav": {
+      "about-us": "Про нас",
+      "catalog": "Каталог",
+      "home": "Головна"
+    },
+    "search-placeholder": "Я люблю бульбашковий чай",
+    "theme": "Тема",
+    "themes": {
+      "dark": "Темний",
+      "light": "Світло",
+      "system": "Система"
+    },
+    "theme-select": "Виберіть тему"
+  },
+  "login-page": {
+    "desc": "Введіть свої облікові дані, щоб отримати доступ до свого облікового запису",
+    "form-submit": "Увійти",
+    "signup-link": "Зареєструватися",
+    "signup-link-desc": "Не маєте облікового запису?",
+    "title": "Ласкаво просимо назад"
   }
 }

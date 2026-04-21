@@ -1,8 +1,46 @@
 {
+  "form": {
+    "labels": {
+      "email": "Электронная почта",
+      "password": "Пароль"
+    },
+    "placeholders": {
+      "email": "you@example.com",
+      "password": "••••••••"
+    },
+    "validation": {
+      "invalid-email": "Неверный адрес электронной почты.",
+      "password-too-short": "Пароль должен содержать не менее 6 символов."
+    }
+  },
   "header": {
     "btn-search": "Поиск",
-    "nav-about-us": "О нас",
-    "nav-catalog": "Каталог",
-    "nav-home": "Главная"
+    "language": "Язык",
+    "language-select": "Выбрать язык",
+    "languages": {
+      "english": "Английский",
+      "russian": "Русский",
+      "ukrainian": "Украинский"
+    },
+    "nav": {
+      "about-us": "О нас",
+      "catalog": "Каталог",
+      "home": "Главная"
+    },
+    "search-placeholder": "Я люблю пузырьковый чай",
+    "theme": "Тема",
+    "themes": {
+      "dark": "Темный",
+      "light": "Светлая",
+      "system": "Система"
+    },
+    "theme-select": "Выбрать тему"
+  },
+  "login-page": {
+    "desc": "Введите свои учетные данные для доступа к вашей учетной записи",
+    "form-submit": "Войти",
+    "signup-link": "Зарегистрироваться",
+    "signup-link-desc": "Нет аккаунта?",
+    "title": "С возвращением"
   }
 }
