@@ -11,7 +11,7 @@ export function getLogInFormSchema (t?: (key: string) => string) {
         6,
         t
           ? t("validation.password-too-short")
-          : "Password must be at least 6 characters.",
+          : "Password must be at least 8 characters.",
       ),
   });
 }
