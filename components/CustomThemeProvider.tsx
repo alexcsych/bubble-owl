@@ -15,7 +15,7 @@ export default function CustomThemeProvider ({
   return (
     <ThemeProvider
       scriptProps={scriptProps}
-      attribute='data-theme'
+      attribute='class'
       defaultTheme='system'
       enableSystem
     >
