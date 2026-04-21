@@ -7,7 +7,7 @@ interface HeaderProps {
   t: (key: string) => string;
 }
 
-export default function Header ({ t }: HeaderProps) {
+export default function Header () {
   return (
     <header className='bg-brand-purple shadow-sm p-2.5'>
       <div className='max-w-300 mx-auto flex justify-between items-center gap-5'>

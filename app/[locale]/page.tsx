@@ -1,6 +1,5 @@
 import { use } from "react";
 import { setRequestLocale } from "next-intl/server";
-import { useTranslations } from "next-intl";
 import Header from "@/components/Header";
 
 type Props = {
@@ -12,11 +11,9 @@ export default function Home ({ params }: Props) {
 
   setRequestLocale(locale);
 
-  const tHeader = useTranslations("header");
-
   return (
     <main className='min-h-screen'>
-      <Header t={tHeader} />
+      <Header />
       <div className='flex flex-col items-center justify-center mt-20'>
         <h2 className='text-4xl font-extrabold text-[#5D4037]'>
           Welcome to Bubble Owl
