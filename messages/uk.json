@@ -36,6 +36,8 @@
       "russian": "Російська",
       "ukrainian": "Українська"
     },
+    "profile": "Профіль",
+    "logout": "Вийти",
     "login": "Увійти",
     "nav": {
       "about-us": "Про нас",

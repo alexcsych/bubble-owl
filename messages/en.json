@@ -36,6 +36,8 @@
       "russian": "Russian",
       "ukrainian": "Ukrainian"
     },
+    "profile": "Profile",
+    "logout": "Log out",
     "login": "Sign in",
     "nav": {
       "about-us": "About Us",
