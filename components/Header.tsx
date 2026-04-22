@@ -4,7 +4,7 @@ import NavBar from "./NavBar";
 import SearchBar from "@/components/SearchBar";
 import ThemeSwitcher from "@/components/ThemeSwitcher";
 import LocaleSwitcher from "./LocaleSwitcher";
-import LogInBtn from "./LogInBtn";
+import AuthButton from "./AuthButton";
 
 export default function Header () {
   return (
@@ -24,10 +24,10 @@ export default function Header () {
         </Link>
         <NavBar />
         <SearchBar />
-        <div className='flex justify-between items-center gap-5'>
+        <div className='flex justify-between items-center gap-2.5'>
           <ThemeSwitcher />
           <LocaleSwitcher />
-          <LogInBtn />
+          <AuthButton />
         </div>
       </div>
     </header>
