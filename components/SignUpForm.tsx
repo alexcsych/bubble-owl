@@ -107,13 +107,13 @@ export default function SignUpForm () {
                         id='password'
                         type={showPassword ? "text" : "password"}
                         placeholder={tForm("placeholders.password")}
-                        className='pr-10'
+                        className='pr-8'
                         aria-invalid={fieldState.invalid}
                       />
                       <button
                         type='button'
                         onClick={() => setShowPassword(!showPassword)}
-                        className='absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground transition-colors outline-none'
+                        className='absolute right-0 inset-y-0 aspect-square text-muted-foreground hover:text-foreground transition-colors outline-none flex items-center justify-center'
                         aria-label={
                           showPassword ? "Hide password" : "Show password"
                         }
