@@ -10,10 +10,21 @@
       "name": "Bubble Owl",
       "password": "Your strong password"
     },
+    "terms-desc": "I agree to the",
+    "terms-link": "terms and conditions",
     "validation": {
       "invalid-email": "Invalid email address.",
       "name-too-short": "Name must be at least 2 characters.",
-      "password-too-short": "Password must be at least 8 characters."
+      "password-too-short": "Password must be at least 8 characters.",
+      "password-uppercase": "Password must contain at least one uppercase letter.",
+      "password-lowercase": "Password must contain at least one lowercase letter.",
+      "password-number": "Password must contain at least one number.",
+      "terms-required": "You must accept the terms and conditions."
+    },
+    "errors": {
+      "email-taken": "This email is already registered. Maybe you want to log in?",
+      "something-went-wrong": "Something went wrong. Please try again later.",
+      "invalid-credentials": "Invalid email or password."
     }
   },
   "header": {
@@ -45,7 +56,8 @@
     "form-submit": "Sign In",
     "signup-link": "Sign up",
     "signup-link-desc": "Don't have an account?",
-    "title": "Welcome back"
+    "title": "Welcome back",
+    "or-continue-with": "Or continue with"
   },
   "signup-page": {
     "desc": "Sign up to get started with our platform",
