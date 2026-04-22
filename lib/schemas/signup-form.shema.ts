@@ -16,10 +16,36 @@ export function getSignUpFormSchema (t?: (key: string) => string) {
     password: z
       .string()
       .min(
-        6,
+        8,
         t
           ? t("validation.password-too-short")
           : "Password must be at least 8 characters.",
+      )
+      .regex(
+        /\p{Lu}/u,
+        t
+          ? t("validation.password-uppercase")
+          : "Password must contain at least one uppercase letter",
+      )
+      .regex(
+        /\p{Ll}/u,
+        t
+          ? t("validation.password-lowercase")
+          : "Password must contain at least one lowercase letter",
+      )
+      .regex(
+        /\d/,
+        t
+          ? t("validation.password-number")
+          : "Password must contain at least one number",
+      ),
+    terms: z
+      .boolean()
+      .refine(
+        val => val === true,
+        t
+          ? t("validation.terms-required")
+          : "You must accept the terms and conditions.",
       ),
   });
 }
