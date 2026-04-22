@@ -178,7 +178,10 @@ export default function LogInForm () {
       </form>
       <p className='text-center text-muted-foreground text-sm'>
         {t("signup-link-desc")}{" "}
-        <Link className='hover:underline' href='/signup'>
+        <Link
+          className='text-brand-purple font-bold hover:underline'
+          href='/signup'
+        >
           {t("signup-link")}
         </Link>
       </p>

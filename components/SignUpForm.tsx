@@ -192,7 +192,10 @@ export default function SignUpForm () {
       </form>
       <p className='text-center text-muted-foreground text-sm'>
         {t("login-link-desc")}{" "}
-        <Link className='hover:underline' href='/login'>
+        <Link
+          className='text-brand-purple font-bold hover:underline'
+          href='/login'
+        >
           {t("login-link")}
         </Link>
       </p>
