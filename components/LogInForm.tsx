@@ -1,6 +1,7 @@
 "use client";
 
 import { Eye, EyeOff } from "lucide-react";
+import { Icons } from "@/components/ui/icons";
 import { Button } from "@/components/ui/button";
 import {
   Field,
@@ -8,19 +9,22 @@ import {
   FieldGroup,
   FieldLabel,
   FieldSet,
+  FieldSeparator,
 } from "@/components/ui/field";
 import { Input } from "@/components/ui/input";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useState } from "react";
 import { Controller, useForm } from "react-hook-form";
-import { Link } from "@/i18n/navigation";
+import { Link, useRouter } from "@/i18n/navigation";
 import { useTranslations } from "next-intl";
 import {
   getLogInFormSchema,
   LogInFormValues,
 } from "@/lib/schemas/login-form.shema";
+import { authClient } from "@/lib/auth-client";
 
 export default function LogInForm () {
+  const router = useRouter();
   const [showPassword, setShowPassword] = useState(false);
   const t = useTranslations("login-page");
   const tForm = useTranslations("form");
@@ -30,12 +34,34 @@ export default function LogInForm () {
     defaultValues: { email: "", password: "" },
   });
 
-  function onSubmit (data: LogInFormValues) {
-    console.log(data);
+  const { isSubmitting } = form.formState;
+
+  async function onSubmit ({ email, password }: LogInFormValues) {
+    await authClient.signIn.email(
+      { email, password },
+      {
+        onSuccess: () => {
+          router.push("/");
+        },
+        onError: ctx => {
+          form.resetField("password");
+
+          if (ctx.error.status === 401) {
+            form.setError("root", {
+              message: tForm("errors.invalid-credentials"),
+            });
+          } else {
+            const errorMessage =
+              ctx.error.message || tForm("errors.something-went-wrong");
+            form.setError("root", { message: errorMessage });
+          }
+        },
+      },
+    );
   }
 
   return (
-    <div className='w-full max-w-md border rounded-2xl p-6 shadow-sm space-y-4'>
+    <div className='w-full max-w-md border rounded-2xl p-6 shadow-xl/30 shadow-brand-purple space-y-4'>
       <div className='space-y-2 text-center'>
         <h1 className='font-bold text-2xl'>{t("title")}</h1>
         <p className='text-muted-foreground text-sm'>{t("desc")}</p>
@@ -105,11 +131,50 @@ export default function LogInForm () {
               />
             </FieldGroup>
           </FieldSet>
-        </FieldGroup>
 
-        <Field orientation='vertical' className='mt-4'>
-          <Button type='submit'>{t("form-submit")}</Button>
-        </Field>
+          {form.formState.errors.root && (
+            <p className='text-sm font-medium text-destructive text-center mt-4'>
+              {form.formState.errors.root.message}
+            </p>
+          )}
+
+          <FieldSet>
+            <Field orientation='vertical'>
+              <Button type='submit' disabled={isSubmitting}>
+                {t("form-submit")}
+              </Button>
+            </Field>
+            <FieldSeparator>{t("or-continue-with")}</FieldSeparator>
+            <Field orientation='horizontal' className='justify-center'>
+              <Button
+                type='button'
+                variant='outline'
+                onClick={() => authClient.signIn.social({ provider: "google" })}
+              >
+                <Icons.google className='h-4 w-4' />
+                Google
+              </Button>
+              <Button
+                type='button'
+                variant='outline'
+                onClick={() => authClient.signIn.social({ provider: "github" })}
+              >
+                <Icons.gitHub className='h-4 w-4' />
+                GitHub
+              </Button>
+              <Button
+                type='button'
+                variant='outline'
+                onClick={() =>
+                  authClient.signIn.social({ provider: "discord" })
+                }
+              >
+                <Icons.discord className='h-4 w-4' />
+                Discord
+              </Button>
+            </Field>
+          </FieldSet>
+        </FieldGroup>
       </form>
       <p className='text-center text-muted-foreground text-sm'>
         {t("signup-link-desc")}{" "}
