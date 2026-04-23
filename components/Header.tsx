@@ -9,10 +9,10 @@ import AuthButton from "./AuthButton";
 export default function Header () {
   return (
     <header className='w-full bg-brand-purple shadow-sm p-2.5'>
-      <div className='max-w-300 mx-auto flex justify-between items-center gap-5'>
+      <div className='max-w-400 mx-auto flex justify-between items-center gap-5'>
         <Link
           href='/'
-          // className='text-white flex justify-between items-center gap-2.5'
+          className='text-white flex justify-between items-center gap-2.5'
         >
           <Image
             src='/owl-icon.png'
@@ -20,7 +20,7 @@ export default function Header () {
             height={30}
             alt='Owl icon logo'
           ></Image>
-          {/* <h1 className='text-xl font-bold text-white'>Bubble Owl</h1> */}
+          <h1 className='text-lg font-bold text-white'>Bubble Owl</h1>
         </Link>
         <NavBar />
         <SearchBar />

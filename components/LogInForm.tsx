@@ -63,7 +63,7 @@ export default function LogInForm () {
   return (
     <div className='w-full max-w-md border rounded-2xl p-6 shadow-xl/30 shadow-brand-purple space-y-4'>
       <div className='space-y-2 text-center'>
-        <h1 className='font-bold text-2xl'>{t("title")}</h1>
+        <h2 className='font-bold text-2xl'>{t("title")}</h2>
         <p className='text-muted-foreground text-sm'>{t("desc")}</p>
       </div>
       <form onSubmit={form.handleSubmit(onSubmit)}>
