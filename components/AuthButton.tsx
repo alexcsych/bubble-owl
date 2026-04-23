@@ -21,13 +21,13 @@ export default function AuthButton () {
   const { data: session, isPending } = authClient.useSession();
   const t = useTranslations("header");
 
-  if (isPending) return <Skeleton className='h-8 w-8 rounded-full' />;
+  if (isPending) return <Skeleton className='size-8 rounded-full' />;
 
   if (!session) {
     return (
       <Button asChild variant='outline'>
         <Link href='/login'>
-          <CircleUserRound className='h-5 w-5' />
+          <CircleUserRound className='size-4' />
           {t("login")}
         </Link>
       </Button>

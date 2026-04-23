@@ -22,8 +22,8 @@ export default function ThemeSwitcher () {
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <Button variant='outline'>
-          <Palette className='h-5 w-5' />
-          {/* {t("theme")} */}
+          <Palette className='size-4' />
+          {t("theme")}
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent className='w-48'>
