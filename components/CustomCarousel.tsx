@@ -9,43 +9,18 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import Image from "next/image";
+import { useLocale } from "next-intl";
+import { Locale } from "@/types/locale";
+import { Carousel as CarouselType } from "@/prisma/generated/client";
 
 const S3_URL = process.env.NEXT_PUBLIC_S3_URL;
+interface CustomCarouselProps {
+  data: CarouselType[];
+}
 
-const BUBBLE_TEAS = [
-  {
-    id: 1,
-    src: `${S3_URL}/bubble-tea/bubble-tea-1.webp`,
-    alt: "Classic Milk Tea",
-  },
-  {
-    id: 2,
-    src: `${S3_URL}/bubble-tea/bubble-tea-2.webp`,
-    alt: "Matcha Latte",
-  },
-  {
-    id: 3,
-    src: `${S3_URL}/bubble-tea/bubble-tea-3.webp`,
-    alt: "Taro Bubble Tea",
-  },
-  {
-    id: 4,
-    src: `${S3_URL}/bubble-tea/bubble-tea-4.webp`,
-    alt: "Fruit Green Tea",
-  },
-  {
-    id: 5,
-    src: `${S3_URL}/bubble-tea/bubble-tea-5.webp`,
-    alt: "Brown Sugar Boba",
-  },
-  {
-    id: 6,
-    src: `${S3_URL}/bubble-tea/bubble-tea-6.webp`,
-    alt: "Strawberry Slush",
-  },
-];
+export default function CustomCarousel ({ data }: CustomCarouselProps) {
+  const locale = useLocale() as Locale;
 
-export default function CustomCarousel () {
   return (
     <Carousel
       opts={{
@@ -62,12 +37,12 @@ export default function CustomCarousel () {
       className='max-w-363 mx-auto mt-10'
     >
       <CarouselContent>
-        {BUBBLE_TEAS.map(item => (
+        {data.map(item => (
           <CarouselItem key={item.id} className='basis-1/2 rounded-md'>
             <div className='aspect-3/2 rounded-md bg-muted relative'>
               <Image
-                src={item.src}
-                alt={item.alt}
+                src={`${S3_URL}/${item.image}`}
+                alt={item[`alt_${locale}`] || item.alt_en}
                 fill
                 sizes='(max-width: 768px) 50vw, 33vw'
                 className='object-cover rounded-md'
