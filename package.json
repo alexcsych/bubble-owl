@@ -44,6 +44,7 @@
     "i18nexus-cli": "^4.1.0",
     "prisma": "^7.7.0",
     "tailwindcss": "^4",
+    "tsx": "^4.21.0",
     "typescript": "^5"
   }
 }
