@@ -1,10 +1,10 @@
 import { Link } from "@/i18n/navigation";
 import Image from "next/image";
-import NavBar from "./NavBar";
+import NavBar from "@/components/NavBar";
 import SearchBar from "@/components/SearchBar";
 import ThemeSwitcher from "@/components/ThemeSwitcher";
-import LocaleSwitcher from "./LocaleSwitcher";
-import AuthButton from "./AuthButton";
+import LocaleSwitcher from "@/components/LocaleSwitcher";
+import AuthButton from "@/components/AuthButton";
 
 export default function Header () {
   return (

@@ -4,12 +4,9 @@ import { Eye, EyeOff } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   Field,
-  // FieldDescription,
   FieldError,
   FieldGroup,
   FieldLabel,
-  // FieldLegend,
-  // FieldSeparator,
   FieldSet,
 } from "@/components/ui/field";
 import { Input } from "@/components/ui/input";
@@ -22,7 +19,7 @@ import {
   getSignUpFormSchema,
   SignUpFormValues,
 } from "@/lib/schemas/signup-form.shema";
-import { Checkbox } from "./ui/checkbox";
+import { Checkbox } from "@/components/ui/checkbox";
 import { authClient } from "@/lib/auth-client";
 
 export default function SignUpForm () {

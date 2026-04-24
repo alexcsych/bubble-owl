@@ -1,7 +1,7 @@
 "use client";
 
 import { authClient } from "@/lib/auth-client";
-import { Button } from "./ui/button";
+import { Button } from "@/components/ui/button";
 import { Link, useRouter } from "@/i18n/navigation";
 import { CircleUserRound } from "lucide-react";
 import { useTranslations } from "next-intl";
@@ -12,9 +12,9 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "./ui/dropdown-menu";
-import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
-import { Skeleton } from "./ui/skeleton";
+} from "@/components/ui/dropdown-menu";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Skeleton } from "@/components/ui/skeleton";
 
 export default function AuthButton () {
   const router = useRouter();
