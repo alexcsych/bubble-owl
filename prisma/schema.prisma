@@ -17,6 +17,8 @@ model User {
   updatedAt     DateTime  @updatedAt
   accounts      Account[]
   sessions      Session[]
+  reviews       Review[]
+  cartItems     CartItem[]
 
   @@map("user")
 }
@@ -66,4 +68,131 @@ model Verification {
 
   @@index([identifier])
   @@map("verification")
+}
+
+model Carousel {
+  id        Int      @id @default(autoincrement())
+  name_en   String
+  name_uk   String
+  name_ru   String
+  image     String
+  alt_en    String
+  alt_uk    String
+  alt_ru    String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("carousel")
+}
+
+model Category {
+  id              Int      @id @default(autoincrement())
+  name_en         String   @unique
+  name_uk         String   @unique
+  name_ru         String   @unique
+  desc_en         String
+  desc_uk         String
+  desc_ru         String
+  image           String
+  alt_en          String
+  alt_uk          String
+  alt_ru          String
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+  items           Item[]
+
+  @@map("category")
+}
+
+model Ingredient {
+  id              Int      @id @default(autoincrement())
+  name_en         String   @unique
+  name_uk         String   @unique
+  name_ru         String   @unique
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+  itemIngredients ItemIngredient[]
+
+  @@map("ingredient")
+}
+
+model Item {
+  id              Int      @id @default(autoincrement())
+  name_en         String
+  name_uk         String
+  name_ru         String
+  shortDesc_en    String
+  shortDesc_uk    String
+  shortDesc_ru    String
+  desc_en         String
+  desc_uk         String
+  desc_ru         String
+  price           Decimal  @db.Decimal(10, 2)
+  salePrice       Decimal? @db.Decimal(10, 2)
+  weight          String?
+  image           String
+  alt_en          String
+  alt_uk          String
+  alt_ru          String
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+  categoryId      Int
+  category        Category @relation(fields: [categoryId], references: [id])
+  tags            Tag[]
+  itemIngredients ItemIngredient[]
+  reviews         Review[]
+  cartItems       CartItem[]
+
+  @@map("item")
+}
+
+model Tag {
+  id        Int      @id @default(autoincrement())
+  name_en   String   @unique
+  name_uk   String   @unique
+  name_ru   String   @unique
+  type      String   @default("flavor") 
+  items     Item[]
+
+  @@map("tag")
+}
+
+model ItemIngredient {
+  id           Int        @id @default(autoincrement())
+  itemId       Int
+  item         Item       @relation(fields: [itemId], references: [id], onDelete: Cascade)
+  ingredientId Int
+  ingredient   Ingredient @relation(fields: [ingredientId], references: [id], onDelete: Cascade)
+  amount       String
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  @@map("item_ingredients")
+}
+
+model Review {
+  id        Int      @id @default(autoincrement())
+  rating    Int      
+  comment   String   @db.Text
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  itemId    Int
+  item      Item     @relation(fields: [itemId], references: [id], onDelete: Cascade)
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("review")
+}
+
+model CartItem {
+  id        Int      @id @default(autoincrement())
+  quantity  Int      @default(1)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  itemId    Int
+  userId    String
+  item      Item     @relation(fields: [itemId], references: [id], onDelete: Cascade)
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("cart_item")
 }
