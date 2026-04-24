@@ -23,6 +23,10 @@ COPY . .
 
 ARG NEXT_PUBLIC_S3_URL
 ENV NEXT_PUBLIC_S3_URL=$NEXT_PUBLIC_S3_URL
+ARG DATABASE_URL
+ENV DATABASE_URL=$DATABASE_URL
+
+RUN npx prisma generate
 
 RUN \
   if [ -f yarn.lock ]; then yarn run build; \
