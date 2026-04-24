@@ -74,8 +74,16 @@ export default function CustomCarousel () {
           </CarouselItem>
         ))}
       </CarouselContent>
-      <CarouselPrevious variant='ghost' size='lg' className='[&_svg]:size-8!' />
-      <CarouselNext variant='ghost' size='lg' className='[&_svg]:size-8!' />
+      <CarouselPrevious
+        variant='outline'
+        size='lg'
+        className="active:translate-y-0! [--tw-translate-y:0px]! active:scale-100! transition-none [&_svg:not([class*='size-'])]:size-8"
+      />
+      <CarouselNext
+        variant='outline'
+        size='lg'
+        className="active:translate-y-0! [--tw-translate-y:0px]! active:scale-100! transition-none [&_svg:not([class*='size-'])]:size-8"
+      />
     </Carousel>
   );
 }
