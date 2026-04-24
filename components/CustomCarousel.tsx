@@ -55,6 +55,8 @@ export default function CustomCarousel () {
       plugins={[
         Autoplay({
           delay: 5000,
+          stopOnInteraction: false,
+          stopOnMouseEnter: true,
         }),
       ]}
       className='max-w-363 mx-auto mt-10'
