@@ -1,23 +1,33 @@
 import prisma from "@/lib/db";
-import seedConfig from "@/prisma/seedConfig";
+import { PrismaModel } from "@/types/prisma";
+import { carouselData } from "@/prisma/data/carousel";
+import { categoriesData } from "@/prisma/data/categories";
+import { ingredientsData } from "@/prisma/data/ingredients";
+import { itemsData } from "@/prisma/data/items";
+import { tagsData } from "@/prisma/data/tags";
+
+async function seedTable<T> (name: string, model: PrismaModel<T>, data: T[]) {
+  console.log(`Seeding ${data.length} items into ${name}...`);
+  for (const itemData of data) {
+    await model.create({ data: itemData });
+  }
+}
 
 async function main () {
   console.log("Start seeding...");
 
-  for (const { name, model } of seedConfig(prisma).slice().reverse()) {
-    console.log(`Cleaning table: ${name}...`);
-    await model.deleteMany();
-  }
+  console.log("Cleaning database...");
+  await prisma.item.deleteMany();
+  await prisma.category.deleteMany();
+  await prisma.tag.deleteMany();
+  await prisma.ingredient.deleteMany();
+  await prisma.carousel.deleteMany();
 
-  for (const { name, model, data } of seedConfig(prisma)) {
-    console.log(`Seeding ${data.length} items into ${name}...`);
-    for (const itemData of data) {
-      const created = await model.create({
-        data: itemData,
-      });
-      console.log(`Created ${name} with ID: ${created.id}`);
-    }
-  }
+  await seedTable("Carousel", prisma.carousel, carouselData);
+  await seedTable("Category", prisma.category, categoriesData);
+  await seedTable("Ingredient", prisma.ingredient, ingredientsData);
+  await seedTable("Tag", prisma.tag, tagsData);
+  await seedTable("Item", prisma.item, itemsData);
 
   console.log("Seeding finished.");
 }
