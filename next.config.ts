@@ -1,12 +1,9 @@
 import { NextConfig } from "next";
 import createNextIntlPlugin from "next-intl/plugin";
 
-const isDev = process.env.NODE_ENV === "development";
-
 const nextConfig: NextConfig = {
   output: "standalone",
   images: {
-    unoptimized: isDev,
     remotePatterns: [
       {
         protocol: "https",
@@ -21,10 +18,8 @@ const nextConfig: NextConfig = {
         hostname: "cdn.discordapp.com",
       },
       {
-        protocol: "http",
-        hostname: "localhost",
-        port: "9000",
-        pathname: "/**",
+        protocol: "https",
+        hostname: "pub-f277e77c33c54a1da9e0ea9ba56bbec7.r2.dev",
       },
     ],
   },
