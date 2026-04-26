@@ -2,6 +2,8 @@ import { use } from "react";
 import { setRequestLocale } from "next-intl/server";
 import Header from "@/components/Header";
 import CustomCarouselWrapper from "@/components/CustomCarouselWrapper";
+import MainSections from "@/components/MainSections";
+import { useTranslations } from "next-intl";
 
 type Props = {
   params: Promise<{ locale: string }>;
@@ -9,19 +11,23 @@ type Props = {
 
 export default function Home ({ params }: Props) {
   const { locale } = use(params);
+  const t = useTranslations("main-page");
 
   setRequestLocale(locale);
 
   return (
-    <main className='min-h-screen'>
+    <div className='min-h-screen'>
       <Header />
-      <CustomCarouselWrapper />
-      <div className='flex flex-col items-center justify-center mt-20'>
-        <h2 className='text-4xl font-extrabold text-[#5D4037]'>
-          Welcome to Bubble Owl
-        </h2>
-        <p className='mt-4 text-gray-600'>Вафли, Моти и лучший Bubble Tea</p>
-      </div>
-    </main>
+      <main className='container mx-auto py-10 px-5'>
+        <div className='flex flex-col items-center justify-center'>
+          <h1 className='text-xl sm:text-2l md:text-3xl lg:text-4xl text-primary font-bold'>
+            {t("title")}
+          </h1>
+          <p className='mt-2.5'>{t("description")}</p>
+        </div>
+        <CustomCarouselWrapper />
+        <MainSections />
+      </main>
+    </div>
   );
 }

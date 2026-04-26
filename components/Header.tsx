@@ -8,8 +8,8 @@ import AuthButton from "@/components/AuthButton";
 
 export default function Header () {
   return (
-    <header className='w-full bg-brand-purple shadow-sm p-2.5'>
-      <div className='max-w-400 mx-auto flex justify-between items-center gap-5'>
+    <header className='w-full bg-brand-purple shadow-sm'>
+      <div className='container mx-auto py-2.5 px-5 flex justify-between items-center gap-5'>
         <Link
           href='/'
           className='text-white flex justify-between items-center gap-2.5'
@@ -20,10 +20,10 @@ export default function Header () {
             height={30}
             alt='Owl icon logo'
           ></Image>
-          <h1 className='text-lg font-bold text-white'>Bubble Owl</h1>
+          <span className='text-lg font-bold text-white'>Bubble Owl</span>
         </Link>
-        <NavBar />
-        <SearchBar />
+        <NavBar className='hidden lg:flex' />
+        <SearchBar className='hidden xl:flex' />
         <div className='flex justify-between items-center gap-2.5'>
           <ThemeSwitcher />
           <LocaleSwitcher />

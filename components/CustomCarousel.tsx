@@ -34,11 +34,11 @@ export default function CustomCarousel ({ data }: CustomCarouselProps) {
           stopOnMouseEnter: true,
         }),
       ]}
-      className='max-w-363 mx-auto mt-10'
+      className='mt-10'
     >
       <CarouselContent>
         {data.map(item => (
-          <CarouselItem key={item.id} className='basis-1/2 rounded-md'>
+          <CarouselItem key={item.id} className='sm:basis-1/2 rounded-md'>
             <div className='aspect-3/2 rounded-md bg-muted relative'>
               <Image
                 src={`${S3_URL}/${item.image}`}
@@ -52,12 +52,12 @@ export default function CustomCarousel ({ data }: CustomCarouselProps) {
         ))}
       </CarouselContent>
       <CarouselPrevious
-        variant='outline'
+        variant='ghost'
         size='lg'
         className="active:translate-y-0! [--tw-translate-y:0px]! active:scale-100! transition-none [&_svg:not([class*='size-'])]:size-8"
       />
       <CarouselNext
-        variant='outline'
+        variant='ghost'
         size='lg'
         className="active:translate-y-0! [--tw-translate-y:0px]! active:scale-100! transition-none [&_svg:not([class*='size-'])]:size-8"
       />

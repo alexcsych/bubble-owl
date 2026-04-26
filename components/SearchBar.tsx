@@ -8,12 +8,19 @@ import {
   InputGroupButton,
   InputGroupInput,
 } from "@/components/ui/input-group";
+import { cn } from "@/lib/utils";
 
-export default function SearchBar () {
+export default function SearchBar ({
+  className,
+  ...props
+}: React.ComponentProps<"div">) {
   const t = useTranslations("header");
 
   return (
-    <InputGroup className='w-full max-w-sm bg-background'>
+    <InputGroup
+      className={cn("w-full max-w-sm bg-background", className)}
+      {...props}
+    >
       <InputGroupInput placeholder={t("search-placeholder")} />
       <InputGroupAddon align='inline-end'>
         <InputGroupButton size='sm' variant='default'>
