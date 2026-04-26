@@ -127,8 +127,8 @@ model Item {
   desc_en         String
   desc_uk         String
   desc_ru         String
-  price           Decimal  @db.Decimal(10, 2)
-  salePrice       Decimal? @db.Decimal(10, 2)
+  price           Int
+  salePrice       Int
   weight          String?
   image           String
   alt_en          String
