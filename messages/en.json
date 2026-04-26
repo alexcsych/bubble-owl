@@ -67,5 +67,16 @@
     "login-link": "Sign in",
     "login-link-desc": "Already have an account?",
     "title": "Create an account"
+  },
+  "main-page": {
+    "title": "Welcome to Bubble Owl",
+    "description": "Bakery, Mochi and the best Bubble Tea",
+    "popular": "Popular",
+    "new": "New",
+    "on-sale": "On Sale"
+  },
+  "common": {
+    "show-more": "Show more",
+    "add-to-cart": "Add to"
   }
 }

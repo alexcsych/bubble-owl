@@ -67,5 +67,16 @@
     "login-link": "Увійти",
     "login-link-desc": "Вже маєте обліковий запис?",
     "title": "Створити обліковий запис"
+  },
+  "main-page": {
+    "title": "Ласкаво просимо до Bubble Owl",
+    "description": "Випічка, Моті та найкращий Bubble Tea",
+    "popular": "Популярне",
+    "new": "Новинки",
+    "on-sale": "Акції"
+  },
+  "common": {
+    "show-more": "Показати ще",
+    "add-to-cart": "У кошик"
   }
 }

@@ -67,5 +67,16 @@
     "login-link": "Войти",
     "login-link-desc": "Уже есть аккаунт?",
     "title": "Создать аккаунт"
+  },
+  "main-page": {
+    "title": "Добро пожаловать в Bubble Owl",
+    "description": "Выпечка, Моти и лучший Bubble Tea",
+    "popular": "Популярное",
+    "new": "Новинки",
+    "on-sale": "Акции"
+  },
+  "common": {
+    "show-more": "Показать ещё",
+    "add-to-cart": "В корзину"
   }
 }
