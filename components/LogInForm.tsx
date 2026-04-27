@@ -1,7 +1,6 @@
 "use client";
 
 import { Eye, EyeOff } from "lucide-react";
-import { Icons } from "@/components/ui/icons";
 import { Button } from "@/components/ui/button";
 import {
   Field,
@@ -22,6 +21,7 @@ import {
   LogInFormValues,
 } from "@/lib/schemas/login-form.shema";
 import { authClient } from "@/lib/auth-client";
+import { socialProviders } from "@/constants/providers";
 
 export default function LogInForm () {
   const router = useRouter();
@@ -146,32 +146,17 @@ export default function LogInForm () {
             </Field>
             <FieldSeparator>{t("or-continue-with")}</FieldSeparator>
             <Field orientation='horizontal' className='justify-center'>
-              <Button
-                type='button'
-                variant='outline'
-                onClick={() => authClient.signIn.social({ provider: "google" })}
-              >
-                <Icons.google className='h-4 w-4' />
-                Google
-              </Button>
-              <Button
-                type='button'
-                variant='outline'
-                onClick={() => authClient.signIn.social({ provider: "github" })}
-              >
-                <Icons.gitHub className='h-4 w-4' />
-                GitHub
-              </Button>
-              <Button
-                type='button'
-                variant='outline'
-                onClick={() =>
-                  authClient.signIn.social({ provider: "discord" })
-                }
-              >
-                <Icons.discord className='h-4 w-4' />
-                Discord
-              </Button>
+              {socialProviders.map(({ id, name, Icon }) => (
+                <Button
+                  key={id}
+                  type='button'
+                  variant='outline'
+                  onClick={() => authClient.signIn.social({ provider: id })}
+                >
+                  <Icon className='size-4' />
+                  {name}
+                </Button>
+              ))}
             </Field>
           </FieldSet>
         </FieldGroup>
