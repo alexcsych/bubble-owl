@@ -21,7 +21,7 @@ export const itemsData = [
     alt_uk: "Класичний молочний чай з сиропом та тапіокою",
     alt_ru: "Классический молочный чай с сиропом и тапиокой",
     category: {
-      connect: { name_en: "Drinks" },
+      connect: { slug: "drinks" },
     },
     tags: {
       connect: [
@@ -66,7 +66,7 @@ export const itemsData = [
     alt_uk: "Помаранчевий тайський чай з кубиками льоду",
     alt_ru: "Оранжевый тайский чай с кубиками льда",
     category: {
-      connect: { name_en: "Drinks" },
+      connect: { slug: "drinks" },
     },
     tags: {
       connect: [
@@ -110,7 +110,7 @@ export const itemsData = [
     alt_uk: "Фіолетовий напій з білою густою пінкою зверху",
     alt_ru: "Фиолетовый напиток с белой густой пенкой сверху",
     category: {
-      connect: { name_en: "Drinks" },
+      connect: { slug: "drinks" },
     },
     tags: {
       connect: [
@@ -152,7 +152,7 @@ export const itemsData = [
     alt_uk: "Прозорий фруктовий чай з насінням маракуйї",
     alt_ru: "Прозрачный фруктовый чай с семенами маракуйи",
     category: {
-      connect: { name_en: "Drinks" },
+      connect: { slug: "drinks" },
     },
     tags: {
       connect: [
@@ -196,7 +196,7 @@ export const itemsData = [
     alt_uk: "Яскравий жовтий чай з манго та прозорими кульками",
     alt_ru: "Яркий желтый чай с манго и прозрачными шариками",
     category: {
-      connect: { name_en: "Drinks" },
+      connect: { slug: "drinks" },
     },
     tags: {
       connect: [
@@ -241,7 +241,7 @@ export const itemsData = [
     alt_uk: "Шаруватий кавовий напій з темними кульками на дні",
     alt_ru: "Слоистый кофейный напиток с темными шариками на дне",
     category: {
-      connect: { name_en: "Drinks" },
+      connect: { slug: "drinks" },
     },
     tags: {
       connect: [
@@ -286,7 +286,7 @@ export const itemsData = [
     alt_uk: "Зелений матча латте з білими шарами кокосового молока",
     alt_ru: "Зеленый матча латте с белыми слоями кокосового молока",
     category: {
-      connect: { name_en: "Drinks" },
+      connect: { slug: "drinks" },
     },
     tags: {
       connect: [
@@ -332,7 +332,7 @@ export const itemsData = [
     alt_uk: "Рожевий фруктовий чай з червоними джус-боллами",
     alt_ru: "Розовый фруктовый чай с красными джус-боллами",
     category: {
-      connect: { name_en: "Drinks" },
+      connect: { slug: "drinks" },
     },
     tags: {
       connect: [
@@ -380,7 +380,7 @@ export const itemsData = [
     alt_uk: "Прозорий чай з білими кубиками желе",
     alt_ru: "Прозрачный чай с белыми кубиками желе",
     category: {
-      connect: { name_en: "Drinks" },
+      connect: { slug: "drinks" },
     },
     tags: {
       connect: [
@@ -424,7 +424,7 @@ export const itemsData = [
     alt_uk: "Чашка гарячого молочного чаю, що парує",
     alt_ru: "Дымящаяся чашка горячего молочного чая",
     category: {
-      connect: { name_en: "Drinks" },
+      connect: { slug: "drinks" },
     },
     tags: {
       connect: [{ name_en: "Hot Drink" }, { name_en: "Creamy" }],
@@ -460,7 +460,7 @@ export const itemsData = [
     alt_uk: "Гарячий латте з серцем на пінці",
     alt_ru: "Горячий латте с сердечком на пенке",
     category: {
-      connect: { name_en: "Drinks" },
+      connect: { slug: "drinks" },
     },
     tags: {
       connect: [
@@ -501,7 +501,7 @@ export const itemsData = [
     alt_uk: "Прозорий гарячий чай у скляній чашці",
     alt_ru: "Прозрачный горячий чай в стеклянной чашке",
     category: {
-      connect: { name_en: "Drinks" },
+      connect: { slug: "drinks" },
     },
     tags: {
       connect: [
@@ -540,7 +540,7 @@ export const itemsData = [
     alt_uk: "Гаряча кава з карамеллю та перлинами",
     alt_ru: "Горячий кофе с карамелью и жемчужинами",
     category: {
-      connect: { name_en: "Drinks" },
+      connect: { slug: "drinks" },
     },
     tags: {
       connect: [
@@ -585,7 +585,7 @@ export const itemsData = [
     alt_uk: "Золотистий круасан на білій тарілці",
     alt_ru: "Золотистый круассан на белой тарелке",
     category: {
-      connect: { name_en: "Pastry" },
+      connect: { slug: "pastry" },
     },
     tags: {
       connect: [{ name_en: "Popular" }, { name_en: "Nutty" }],
@@ -621,7 +621,7 @@ export const itemsData = [
     alt_uk: "Квадратна випічка з зеленим кремом та ягодами",
     alt_ru: "Квадратная выпечка с зеленым кремом и ягодами",
     category: {
-      connect: { name_en: "Pastry" },
+      connect: { slug: "pastry" },
     },
     tags: {
       connect: [
@@ -666,7 +666,7 @@ export const itemsData = [
     alt_uk: "Великий круасан-сендвіч з рибою та зеленню",
     alt_ru: "Большой круассан-сэндвич с рыбой и зеленью",
     category: {
-      connect: { name_en: "Pastry" },
+      connect: { slug: "pastry" },
     },
     tags: {
       connect: [{ name_en: "Popular" }, { name_en: "Refreshing" }],
@@ -703,7 +703,7 @@ export const itemsData = [
     alt_uk: "Шоколадний круасан, посипаний какао",
     alt_ru: "Шоколадный круассан, посыпанный какао",
     category: {
-      connect: { name_en: "Pastry" },
+      connect: { slug: "pastry" },
     },
     tags: {
       connect: [
@@ -747,7 +747,7 @@ export const itemsData = [
     alt_uk: "Солодка випічка з мигдалевими пластівцями",
     alt_ru: "Сладкая выпечка с миндальными хлопьями",
     category: {
-      connect: { name_en: "Pastry" },
+      connect: { slug: "pastry" },
     },
     tags: {
       connect: [{ name_en: "Nutty" }, { name_en: "Creamy" }],
@@ -783,7 +783,7 @@ export const itemsData = [
     alt_uk: "Солоний круасан з розплавленим сиром та шинкою",
     alt_ru: "Соленый круассан с расплавленным сыром и ветчиной",
     category: {
-      connect: { name_en: "Pastry" },
+      connect: { slug: "pastry" },
     },
     tags: {
       connect: [{ name_en: "Limited" }, { name_en: "Popular" }],
@@ -825,7 +825,7 @@ export const itemsData = [
     alt_uk: "Фіолетові кульки моті",
     alt_ru: "Фиолетовые шарики моти",
     category: {
-      connect: { name_en: "Mochi" },
+      connect: { slug: "mochi" },
     },
     tags: {
       connect: [
@@ -862,7 +862,7 @@ export const itemsData = [
     alt_uk: "Шоколадне моті в какао-порошку",
     alt_ru: "Шоколадное моти в какао-порошке",
     category: {
-      connect: { name_en: "Mochi" },
+      connect: { slug: "mochi" },
     },
     tags: {
       connect: [
@@ -906,7 +906,7 @@ export const itemsData = [
     alt_uk: "Класичне моті з червоною начинкою",
     alt_ru: "Классическое моти с красной начинкой",
     category: {
-      connect: { name_en: "Mochi" },
+      connect: { slug: "mochi" },
     },
     tags: {
       connect: [
@@ -945,7 +945,7 @@ export const itemsData = [
     alt_uk: "Яскраві помаранчеві кульки моті",
     alt_ru: "Яркие оранжевые шарики моти",
     category: {
-      connect: { name_en: "Mochi" },
+      connect: { slug: "mochi" },
     },
     tags: {
       connect: [
@@ -986,7 +986,7 @@ export const itemsData = [
     alt_uk: "Сіре моті, посипане насінням чорного кунжуту",
     alt_ru: "Серое моти, посыпанное семенами черного кунжута",
     category: {
-      connect: { name_en: "Mochi" },
+      connect: { slug: "mochi" },
     },
     tags: {
       connect: [
@@ -1023,7 +1023,7 @@ export const itemsData = [
     alt_uk: "Світло-жовті кульки моті",
     alt_ru: "Светло-желтые шарики моти",
     category: {
-      connect: { name_en: "Mochi" },
+      connect: { slug: "mochi" },
     },
     tags: {
       connect: [
@@ -1063,7 +1063,7 @@ export const itemsData = [
     alt_uk: "Рожеве моті з кремовою начинкою",
     alt_ru: "Розовое моти с кремовой начинкой",
     category: {
-      connect: { name_en: "Mochi" },
+      connect: { slug: "mochi" },
     },
     tags: {
       connect: [
@@ -1106,7 +1106,7 @@ export const itemsData = [
     alt_uk: "Жовта десертна чаша з білими перлинами",
     alt_ru: "Желтая десертная чаша с белыми жемчужинами",
     category: {
-      connect: { name_en: "Tapioca Desserts" },
+      connect: { slug: "tapioca" },
     },
     tags: {
       connect: [
@@ -1151,7 +1151,7 @@ export const itemsData = [
     alt_uk: "Десертний боул з темним желе та білим молоком",
     alt_ru: "Десертный боул с темным желе и белым молоком",
     category: {
-      connect: { name_en: "Tapioca Desserts" },
+      connect: { slug: "tapioca" },
     },
     tags: {
       connect: [
@@ -1197,7 +1197,7 @@ export const itemsData = [
     alt_uk: "Білий кокосовий десерт з темно-червоною квасолею",
     alt_ru: "Белый кокосовый десерт с темно-красной фасолью",
     category: {
-      connect: { name_en: "Tapioca Desserts" },
+      connect: { slug: "tapioca" },
     },
     tags: {
       connect: [
@@ -1249,7 +1249,7 @@ export const itemsData = [
     alt_uk: "Шоколадно-молочний мікс з темною бобою",
     alt_ru: "Шоколадно-молочный микс с темной бобой",
     category: {
-      connect: { name_en: "Tapioca Desserts" },
+      connect: { slug: "tapioca" },
     },
     tags: {
       connect: [
@@ -1301,7 +1301,7 @@ export const itemsData = [
     alt_uk: "Рожевий десерт з червоними та прозорими перлинами",
     alt_ru: "Розовый десерт с красными и прозрачными жемчужинами",
     category: {
-      connect: { name_en: "Tapioca Desserts" },
+      connect: { slug: "tapioca" },
     },
     tags: {
       connect: [

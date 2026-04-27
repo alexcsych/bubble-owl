@@ -1,5 +1,6 @@
 export const categoriesData = [
   {
+    slug: "drinks",
     name_en: "Drinks",
     name_uk: "Напої",
     name_ru: "Напитки",
@@ -15,6 +16,7 @@ export const categoriesData = [
     alt_ru: "Разнообразие холодных и горячих напитков",
   },
   {
+    slug: "pastry",
     name_en: "Pastry",
     name_uk: "Випічка",
     name_ru: "Выпечка",
@@ -30,6 +32,7 @@ export const categoriesData = [
     alt_ru: "Ассорти свежеиспеченной французской выпечки",
   },
   {
+    slug: "mochi",
     name_en: "Mochi",
     name_uk: "Моті",
     name_ru: "Моти",
@@ -45,6 +48,7 @@ export const categoriesData = [
     alt_ru: "Традиционные и современные десерты моти",
   },
   {
+    slug: "tapioca",
     name_en: "Tapioca Desserts",
     name_uk: "Десерти з тапіокою",
     name_ru: "Десерты с тапиокой",
