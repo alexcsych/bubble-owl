@@ -3,6 +3,7 @@ import { setRequestLocale } from "next-intl/server";
 import Header from "@/components/Header";
 import CustomCarouselWrapper from "@/components/CustomCarouselWrapper";
 import MainSections from "@/components/MainSections";
+import Footer from "@/components/Footer";
 import { useTranslations } from "next-intl";
 
 type Props = {
@@ -28,6 +29,7 @@ export default function Home ({ params }: Props) {
         <CustomCarouselWrapper />
         <MainSections />
       </main>
+      <Footer />
     </div>
   );
 }
