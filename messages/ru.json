@@ -27,31 +27,45 @@
       "invalid-credentials": "Неверная почта или пароль."
     }
   },
-  "header": {
-    "btn-search": "Поиск",
+  "language-selector": {
     "language": "Язык",
     "language-select": "Выбрать язык",
     "languages": {
       "english": "Английский",
       "russian": "Русский",
       "ukrainian": "Украинский"
-    },
-    "profile": "Профиль",
-    "logout": "Выйти",
-    "login": "Войти",
-    "nav": {
-      "about-us": "О нас",
-      "catalog": "Каталог",
-      "home": "Главная"
-    },
-    "search-placeholder": "Я люблю пузырьковый чай",
+    }
+  },
+  "theme-selector": {
     "theme": "Тема",
+    "theme-select": "Выбрать тему",
     "themes": {
       "dark": "Темный",
       "light": "Светлая",
       "system": "Система"
-    },
-    "theme-select": "Выбрать тему"
+    }
+  },
+  "nav": {
+    "about-us": "О нас",
+    "catalog": "Каталог",
+    "home": "Главная",
+    "terms": "Условия использования",
+    "privacy": "Политика конфиденциальности"
+  },
+  "header": {
+    "btn-search": "Поиск",
+    "profile": "Профиль",
+    "logout": "Выйти",
+    "login": "Войти",
+    "search-placeholder": "Я люблю пузырьковый чай"
+  },
+  "footer": {
+    "navigation": "Навигация",
+    "policies": "Политики",
+    "contacts": "Контакты",
+    "social": "Соцсети",
+    "settings": "Настройки",
+    "copyright": "Все права защищены"
   },
   "login-page": {
     "desc": "Введите свои учетные данные для доступа к вашей учетной записи",

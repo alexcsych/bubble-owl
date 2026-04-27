@@ -27,31 +27,45 @@
       "invalid-credentials": "Invalid email or password."
     }
   },
-  "header": {
-    "btn-search": "Search",
+  "language-selector": {
     "language": "Language",
     "language-select": "Select Language",
     "languages": {
       "english": "English",
       "russian": "Russian",
       "ukrainian": "Ukrainian"
-    },
-    "profile": "Profile",
-    "logout": "Log out",
-    "login": "Sign in",
-    "nav": {
-      "about-us": "About Us",
-      "catalog": "Catalog",
-      "home": "Home"
-    },
-    "search-placeholder": "I love bubble tea",
+    }
+  },
+  "theme-selector": {
     "theme": "Theme",
+    "theme-select": "Select theme",
     "themes": {
       "dark": "Dark",
       "light": "Light",
       "system": "System"
-    },
-    "theme-select": "Select theme"
+    }
+  },
+  "nav": {
+    "about-us": "About Us",
+    "catalog": "Catalog",
+    "home": "Home",
+    "terms": "Terms of Service",
+    "privacy": "Privacy Policy"
+  },
+  "header": {
+    "btn-search": "Search",
+    "profile": "Profile",
+    "logout": "Log out",
+    "login": "Sign in",
+    "search-placeholder": "I love bubble tea"
+  },
+  "footer": {
+    "navigation": "Navigation",
+    "policies": "Policies",
+    "contacts": "Contacts",
+    "social": "Social Media",
+    "settings": "Settings",
+    "copyright": "All rights reserved"
   },
   "login-page": {
     "desc": "Enter your credentials to access your account",

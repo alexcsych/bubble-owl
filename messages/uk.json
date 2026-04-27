@@ -27,31 +27,45 @@
       "invalid-credentials": "Неправильна пошта або пароль."
     }
   },
-  "header": {
-    "btn-search": "Пошук",
+  "language-selector": {
     "language": "Мова",
     "language-select": "Виберіть мову",
     "languages": {
       "english": "Англійська",
       "russian": "Російська",
       "ukrainian": "Українська"
-    },
-    "profile": "Профіль",
-    "logout": "Вийти",
-    "login": "Увійти",
-    "nav": {
-      "about-us": "Про нас",
-      "catalog": "Каталог",
-      "home": "Головна"
-    },
-    "search-placeholder": "Я люблю бульбашковий чай",
+    }
+  },
+  "theme-selector": {
     "theme": "Тема",
+    "theme-select": "Виберіть тему",
     "themes": {
       "dark": "Темний",
       "light": "Світло",
       "system": "Система"
-    },
-    "theme-select": "Виберіть тему"
+    }
+  },
+  "nav": {
+    "about-us": "Про нас",
+    "catalog": "Каталог",
+    "home": "Головна",
+    "terms": "Умови надання послуг",
+    "privacy": "Політика конфіденційності"
+  },
+  "header": {
+    "btn-search": "Пошук",
+    "profile": "Профіль",
+    "logout": "Вийти",
+    "login": "Увійти",
+    "search-placeholder": "Я люблю бульбашковий чай"
+  },
+  "footer": {
+    "navigation": "Навігація",
+    "policies": "Політики",
+    "contacts": "Контакти",
+    "social": "Соцмережі",
+    "settings": "Налаштування",
+    "copyright": "Всі права захищені"
   },
   "login-page": {
     "desc": "Введіть свої облікові дані, щоб отримати доступ до свого облікового запису",
