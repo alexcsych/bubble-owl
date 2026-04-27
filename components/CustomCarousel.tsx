@@ -34,7 +34,6 @@ export default function CustomCarousel ({ data }: CustomCarouselProps) {
           stopOnMouseEnter: true,
         }),
       ]}
-      className='mt-10'
     >
       <CarouselContent>
         {data.map(item => (

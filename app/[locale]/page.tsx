@@ -19,12 +19,12 @@ export default function Home ({ params }: Props) {
   return (
     <div className='min-h-screen'>
       <Header />
-      <main className='container mx-auto py-10 px-5'>
-        <div className='flex flex-col items-center justify-center'>
-          <h1 className='text-xl sm:text-2l md:text-3xl lg:text-4xl text-primary font-bold'>
+      <main className='container mx-auto flex flex-col gap-10 py-10 px-5'>
+        <div className='flex flex-col items-center justify-center gap-2.5'>
+          <h1 className='text-2xl md:text-3xl lg:text-4xl text-primary font-bold'>
             {t("title")}
           </h1>
-          <p className='mt-2.5'>{t("description")}</p>
+          <p className='text-sm lg:text-base'>{t("description")}</p>
         </div>
         <CustomCarouselWrapper />
         <MainSections />

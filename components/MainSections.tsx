@@ -21,7 +21,7 @@ export default async function MainSections () {
   ]);
 
   return (
-    <div className='flex flex-col gap-5 mt-10'>
+    <div className='flex flex-col gap-5'>
       <HomeSection
         title='popular'
         items={popularItems}

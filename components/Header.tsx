@@ -23,7 +23,7 @@ export default function Header () {
           ></Image>
           <span className='text-lg font-bold text-white'>Bubble Owl</span>
         </Link>
-        <Nav items={MAIN_NAV} className='hidden lg:flex' />
+        <Nav items={MAIN_NAV} className='lg:flex lg:[&_a]:text-lg' />
         <SearchBar className='hidden xl:flex' />
         <div className='flex justify-between items-center gap-2.5'>
           <ThemeSwitcher />
