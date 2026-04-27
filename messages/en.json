@@ -89,8 +89,13 @@
     "new": "New",
     "on-sale": "On Sale"
   },
+  "catalog-page": {
+    "title": "Catalog",
+    "description": "Explore our categories and find something you'll love"
+  },
   "common": {
     "show-more": "Show more",
-    "add-to-cart": "Add to"
+    "add-to-cart": "Add to",
+    "products": "products"
   }
 }
