@@ -13,7 +13,7 @@ async function seedTable<T> (name: string, model: PrismaModel<T>, data: T[]) {
   }
 }
 
-async function main () {
+try {
   console.log("Start seeding...");
 
   console.log("Cleaning database...");
@@ -30,13 +30,9 @@ async function main () {
   await seedTable("Item", prisma.item, itemsData);
 
   console.log("Seeding finished.");
+} catch (e) {
+  console.error(e);
+  process.exit(1);
+} finally {
+  await prisma.$disconnect();
 }
-
-main()
-  .catch(e => {
-    console.error(e);
-    process.exit(1);
-  })
-  .finally(async () => {
-    await prisma.$disconnect();
-  });
