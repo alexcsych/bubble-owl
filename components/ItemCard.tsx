@@ -7,8 +7,7 @@ import Image from "next/image";
 import { ItemWithTags } from "@/types/prisma";
 import { Button } from "./ui/button";
 import { ShoppingCart } from "lucide-react";
-
-const S3_URL = process.env.NEXT_PUBLIC_S3_URL;
+import { S3_URL } from "@/constants/images";
 
 interface ItemProps {
   item: ItemWithTags;
