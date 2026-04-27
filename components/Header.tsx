@@ -6,6 +6,7 @@ import ThemeSwitcher from "@/components/ThemeSwitcher";
 import LocaleSwitcher from "@/components/LocaleSwitcher";
 import AuthButton from "@/components/AuthButton";
 import { MAIN_NAV } from "@/constants/navigation";
+import { S3_URL } from "@/constants/images";
 
 export default function Header () {
   return (
@@ -16,7 +17,7 @@ export default function Header () {
           className='text-white flex justify-between items-center gap-2.5'
         >
           <Image
-            src='/owl-icon.png'
+            src={`${S3_URL}/owl-icon.webp`}
             width={30}
             height={30}
             alt='Owl icon logo'
