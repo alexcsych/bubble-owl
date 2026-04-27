@@ -7,6 +7,7 @@ import { Mail, Phone } from "lucide-react";
 import { MAIN_NAV, POLICIES } from "@/constants/navigation";
 import Nav from "./Nav";
 import FooterSection from "./FooterSection";
+import CopyrightNotice from "./CopyrightNotice";
 
 export default function Footer () {
   const t = useTranslations("footer");
@@ -62,9 +63,7 @@ export default function Footer () {
           </FooterSection>
         </div>
         <Separator className='bg-white/20 mt-2' />
-        <span className='text-center text-sm text-white opacity-80'>
-          © {new Date().getFullYear()} BubbleOwl. {t("copyright")}
-        </span>
+        <CopyrightNotice />
       </div>
     </footer>
   );
