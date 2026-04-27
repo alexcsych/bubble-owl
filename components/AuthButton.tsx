@@ -38,8 +38,14 @@ export default function AuthButton () {
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <Avatar>
-          <AvatarImage src={session.user.image || undefined} />
-          <AvatarFallback>{session.user.name[0]}</AvatarFallback>
+          <AvatarImage
+            src={session.user.image || undefined}
+            alt={session.user.name}
+            referrerPolicy='no-referrer'
+          />
+          <AvatarFallback>
+            {session.user.name?.charAt(0).toUpperCase() || "U"}
+          </AvatarFallback>
         </Avatar>
       </DropdownMenuTrigger>
       <DropdownMenuContent align='end'>
