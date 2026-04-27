@@ -1,10 +1,11 @@
 import { Link } from "@/i18n/navigation";
 import Image from "next/image";
-import NavBar from "@/components/NavBar";
+import Nav from "@/components/Nav";
 import SearchBar from "@/components/SearchBar";
 import ThemeSwitcher from "@/components/ThemeSwitcher";
 import LocaleSwitcher from "@/components/LocaleSwitcher";
 import AuthButton from "@/components/AuthButton";
+import { MAIN_NAV } from "@/constants/navigation";
 
 export default function Header () {
   return (
@@ -22,7 +23,7 @@ export default function Header () {
           ></Image>
           <span className='text-lg font-bold text-white'>Bubble Owl</span>
         </Link>
-        <NavBar className='hidden lg:flex' />
+        <Nav items={MAIN_NAV} className='hidden lg:flex' />
         <SearchBar className='hidden xl:flex' />
         <div className='flex justify-between items-center gap-2.5'>
           <ThemeSwitcher />
