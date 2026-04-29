@@ -25,10 +25,10 @@ export const itemsData = [
     },
     tags: {
       connect: [
-        { name_en: "Popular" },
-        { name_en: "Sale" },
-        { name_en: "Cold Drink" },
-        { name_en: "Caramel" },
+        { slug: "popular" },
+        { slug: "sale" },
+        { slug: "cold-drink" },
+        { slug: "caramel" },
       ],
     },
     itemIngredients: {
@@ -70,9 +70,9 @@ export const itemsData = [
     },
     tags: {
       connect: [
-        { name_en: "Spicy" },
-        { name_en: "Cold Drink" },
-        { name_en: "Refreshing" },
+        { slug: "spicy" },
+        { slug: "cold-drink" },
+        { slug: "refreshing" },
       ],
     },
     itemIngredients: {
@@ -114,10 +114,10 @@ export const itemsData = [
     },
     tags: {
       connect: [
-        { name_en: "Creamy" },
-        { name_en: "Sale" },
-        { name_en: "Cold Drink" },
-        { name_en: "Popular" },
+        { slug: "creamy" },
+        { slug: "sale" },
+        { slug: "cold-drink" },
+        { slug: "popular" },
       ],
     },
     itemIngredients: {
@@ -156,10 +156,10 @@ export const itemsData = [
     },
     tags: {
       connect: [
-        { name_en: "Refreshing" },
-        { name_en: "Fruity" },
-        { name_en: "Cold Drink" },
-        { name_en: "Sour" },
+        { slug: "refreshing" },
+        { slug: "fruity" },
+        { slug: "cold-drink" },
+        { slug: "sour" },
       ],
     },
     itemIngredients: {
@@ -200,10 +200,10 @@ export const itemsData = [
     },
     tags: {
       connect: [
-        { name_en: "Fruity" },
-        { name_en: "Refreshing" },
-        { name_en: "Cold Drink" },
-        { name_en: "Sale" },
+        { slug: "fruity" },
+        { slug: "refreshing" },
+        { slug: "cold-drink" },
+        { slug: "sale" },
       ],
     },
     itemIngredients: {
@@ -245,10 +245,10 @@ export const itemsData = [
     },
     tags: {
       connect: [
-        { name_en: "Popular" },
-        { name_en: "Cold Drink" },
-        { name_en: "Caramel" },
-        { name_en: "Nutty" },
+        { slug: "popular" },
+        { slug: "cold-drink" },
+        { slug: "caramel" },
+        { slug: "nutty" },
       ],
     },
     itemIngredients: {
@@ -290,10 +290,10 @@ export const itemsData = [
     },
     tags: {
       connect: [
-        { name_en: "Vegan" },
-        { name_en: "Lactose Free" },
-        { name_en: "Creamy" },
-        { name_en: "Cold Drink" },
+        { slug: "vegan" },
+        { slug: "lactose-free" },
+        { slug: "creamy" },
+        { slug: "cold-drink" },
       ],
     },
     itemIngredients: {
@@ -336,10 +336,10 @@ export const itemsData = [
     },
     tags: {
       connect: [
-        { name_en: "Fruity" },
-        { name_en: "Refreshing" },
-        { name_en: "Sale" },
-        { name_en: "Limited" },
+        { slug: "fruity" },
+        { slug: "refreshing" },
+        { slug: "sale" },
+        { slug: "limited" },
       ],
     },
     itemIngredients: {
@@ -384,9 +384,9 @@ export const itemsData = [
     },
     tags: {
       connect: [
-        { name_en: "Refreshing" },
-        { name_en: "Fruity" },
-        { name_en: "Cold Drink" },
+        { slug: "refreshing" },
+        { slug: "fruity" },
+        { slug: "cold-drink" },
       ],
     },
     itemIngredients: {
@@ -427,7 +427,7 @@ export const itemsData = [
       connect: { slug: "drinks" },
     },
     tags: {
-      connect: [{ name_en: "Hot Drink" }, { name_en: "Creamy" }],
+      connect: [{ slug: "hot-drink" }, { slug: "creamy" }],
     },
     itemIngredients: {
       create: [
@@ -464,10 +464,10 @@ export const itemsData = [
     },
     tags: {
       connect: [
-        { name_en: "Hot Drink" },
-        { name_en: "Nutty" },
-        { name_en: "Popular" },
-        { name_en: "Sale" },
+        { slug: "hot-drink" },
+        { slug: "nutty" },
+        { slug: "popular" },
+        { slug: "sale" },
       ],
     },
     itemIngredients: {
@@ -505,9 +505,9 @@ export const itemsData = [
     },
     tags: {
       connect: [
-        { name_en: "Hot Drink" },
-        { name_en: "Refreshing" },
-        { name_en: "Sugar Free" },
+        { slug: "hot-drink" },
+        { slug: "refreshing" },
+        { slug: "sugar-free" },
       ],
     },
     itemIngredients: {
@@ -544,9 +544,9 @@ export const itemsData = [
     },
     tags: {
       connect: [
-        { name_en: "Hot Drink" },
-        { name_en: "Caramel" },
-        { name_en: "Popular" },
+        { slug: "hot-drink" },
+        { slug: "caramel" },
+        { slug: "popular" },
       ],
     },
     itemIngredients: {
@@ -588,7 +588,7 @@ export const itemsData = [
       connect: { slug: "pastry" },
     },
     tags: {
-      connect: [{ name_en: "Popular" }, { name_en: "Nutty" }],
+      connect: [{ slug: "popular" }, { slug: "nutty" }],
     },
     itemIngredients: {
       create: [
@@ -625,10 +625,10 @@ export const itemsData = [
     },
     tags: {
       connect: [
-        { name_en: "New" },
-        { name_en: "Nutty" },
-        { name_en: "Fruity" },
-        { name_en: "Sale" },
+        { slug: "new" },
+        { slug: "nutty" },
+        { slug: "fruity" },
+        { slug: "sale" },
       ],
     },
     itemIngredients: {
@@ -669,7 +669,7 @@ export const itemsData = [
       connect: { slug: "pastry" },
     },
     tags: {
-      connect: [{ name_en: "Popular" }, { name_en: "Refreshing" }],
+      connect: [{ slug: "popular" }, { slug: "refreshing" }],
     },
     itemIngredients: {
       create: [
@@ -706,11 +706,7 @@ export const itemsData = [
       connect: { slug: "pastry" },
     },
     tags: {
-      connect: [
-        { name_en: "Chocolate" },
-        { name_en: "Popular" },
-        { name_en: "Sale" },
-      ],
+      connect: [{ slug: "chocolate" }, { slug: "popular" }, { slug: "sale" }],
     },
     itemIngredients: {
       create: [
@@ -750,7 +746,7 @@ export const itemsData = [
       connect: { slug: "pastry" },
     },
     tags: {
-      connect: [{ name_en: "Nutty" }, { name_en: "Creamy" }],
+      connect: [{ slug: "nutty" }, { slug: "creamy" }],
     },
     itemIngredients: {
       create: [
@@ -786,7 +782,7 @@ export const itemsData = [
       connect: { slug: "pastry" },
     },
     tags: {
-      connect: [{ name_en: "Limited" }, { name_en: "Popular" }],
+      connect: [{ slug: "limited" }, { slug: "popular" }],
     },
     itemIngredients: {
       create: [
@@ -829,10 +825,10 @@ export const itemsData = [
     },
     tags: {
       connect: [
-        { name_en: "New" },
-        { name_en: "Vegan" },
-        { name_en: "Lactose Free" },
-        { name_en: "Gluten Free" },
+        { slug: "new" },
+        { slug: "vegan" },
+        { slug: "lactose-free" },
+        { slug: "gluten-free" },
       ],
     },
     itemIngredients: {
@@ -866,10 +862,10 @@ export const itemsData = [
     },
     tags: {
       connect: [
-        { name_en: "Chocolate" },
-        { name_en: "Popular" },
-        { name_en: "Sale" },
-        { name_en: "Cold Drink" },
+        { slug: "chocolate" },
+        { slug: "popular" },
+        { slug: "sale" },
+        { slug: "cold-drink" },
       ],
     },
     itemIngredients: {
@@ -910,9 +906,9 @@ export const itemsData = [
     },
     tags: {
       connect: [
-        { name_en: "Vegan" },
-        { name_en: "Gluten Free" },
-        { name_en: "Refreshing" },
+        { slug: "vegan" },
+        { slug: "gluten-free" },
+        { slug: "refreshing" },
       ],
     },
     itemIngredients: {
@@ -949,10 +945,10 @@ export const itemsData = [
     },
     tags: {
       connect: [
-        { name_en: "Fruity" },
-        { name_en: "Refreshing" },
-        { name_en: "Vegan" },
-        { name_en: "Gluten Free" },
+        { slug: "fruity" },
+        { slug: "refreshing" },
+        { slug: "vegan" },
+        { slug: "gluten-free" },
       ],
     },
     itemIngredients: {
@@ -990,10 +986,10 @@ export const itemsData = [
     },
     tags: {
       connect: [
-        { name_en: "Nutty" },
-        { name_en: "Sale" },
-        { name_en: "Vegan" },
-        { name_en: "Gluten Free" },
+        { slug: "nutty" },
+        { slug: "sale" },
+        { slug: "vegan" },
+        { slug: "gluten-free" },
       ],
     },
     itemIngredients: {
@@ -1026,11 +1022,7 @@ export const itemsData = [
       connect: { slug: "mochi" },
     },
     tags: {
-      connect: [
-        { name_en: "Limited" },
-        { name_en: "Creamy" },
-        { name_en: "Fruity" },
-      ],
+      connect: [{ slug: "limited" }, { slug: "creamy" }, { slug: "fruity" }],
     },
     itemIngredients: {
       create: [
@@ -1067,10 +1059,10 @@ export const itemsData = [
     },
     tags: {
       connect: [
-        { name_en: "Popular" },
-        { name_en: "Creamy" },
-        { name_en: "Sale" },
-        { name_en: "Fruity" },
+        { slug: "popular" },
+        { slug: "creamy" },
+        { slug: "sale" },
+        { slug: "fruity" },
       ],
     },
     itemIngredients: {
@@ -1110,10 +1102,10 @@ export const itemsData = [
     },
     tags: {
       connect: [
-        { name_en: "Fruity" },
-        { name_en: "Lactose Free" },
-        { name_en: "Popular" },
-        { name_en: "Sale" },
+        { slug: "fruity" },
+        { slug: "lactose-free" },
+        { slug: "popular" },
+        { slug: "sale" },
       ],
     },
     itemIngredients: {
@@ -1155,10 +1147,10 @@ export const itemsData = [
     },
     tags: {
       connect: [
-        { name_en: "Refreshing" },
-        { name_en: "Vegan" },
-        { name_en: "Lactose Free" },
-        { name_en: "Limited" },
+        { slug: "refreshing" },
+        { slug: "vegan" },
+        { slug: "lactose-free" },
+        { slug: "limited" },
       ],
     },
     itemIngredients: {
@@ -1201,10 +1193,10 @@ export const itemsData = [
     },
     tags: {
       connect: [
-        { name_en: "Vegan" },
-        { name_en: "Lactose Free" },
-        { name_en: "Creamy" },
-        { name_en: "Nutty" },
+        { slug: "vegan" },
+        { slug: "lactose-free" },
+        { slug: "creamy" },
+        { slug: "nutty" },
       ],
     },
     itemIngredients: {
@@ -1253,10 +1245,10 @@ export const itemsData = [
     },
     tags: {
       connect: [
-        { name_en: "Chocolate" },
-        { name_en: "Creamy" },
-        { name_en: "Popular" },
-        { name_en: "Sale" },
+        { slug: "chocolate" },
+        { slug: "creamy" },
+        { slug: "popular" },
+        { slug: "sale" },
       ],
     },
     itemIngredients: {
@@ -1305,10 +1297,10 @@ export const itemsData = [
     },
     tags: {
       connect: [
-        { name_en: "Fruity" },
-        { name_en: "Refreshing" },
-        { name_en: "Lactose Free" },
-        { name_en: "New" },
+        { slug: "fruity" },
+        { slug: "refreshing" },
+        { slug: "lactose-free" },
+        { slug: "new" },
       ],
     },
     itemIngredients: {

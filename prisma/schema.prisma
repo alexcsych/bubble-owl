@@ -149,9 +149,10 @@ model Item {
 
 model Tag {
   id        Int      @id @default(autoincrement())
-  name_en   String   @unique
-  name_uk   String   @unique
-  name_ru   String   @unique
+  slug      String   @unique
+  name_en   String
+  name_uk   String
+  name_ru   String
   type      String   @default("flavor") 
   items     Item[]
 
