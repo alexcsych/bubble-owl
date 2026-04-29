@@ -22,7 +22,7 @@ export default function ItemCard ({
   return (
     <div
       className={cn(
-        "flex flex-col lg:flex-row xl:flex-col 2xl:flex-row bg-brand-purple/5 hover:bg-brand-purple/15 rounded-md shadow-sm/50 shadow-brand-purple overflow-hidden transition-colors duration-300 ease-in-out",
+        "flex flex-col lg:flex-row xl:flex-col 2xl:flex-row bg-primary/5 hover:bg-primary/10 rounded-md shadow-sm/50 shadow-brand-purple overflow-hidden transition-colors duration-300 ease-in-out",
         className,
       )}
       {...props}
