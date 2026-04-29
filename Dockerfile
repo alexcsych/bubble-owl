@@ -1,7 +1,7 @@
 # syntax=docker.io/docker/dockerfile:1
 
 # Базовый образ
-FROM node:22-alpine AS base
+FROM node:24-alpine AS base
 
 # Этап 1: Зависимости
 FROM base AS deps
