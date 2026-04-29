@@ -51,17 +51,19 @@ export default function Catalog ({ params }: Props) {
           __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c"),
         }}
       />
-      <Header />
-      <main className='container mx-auto flex flex-col gap-10 py-10 px-5'>
-        <BreadcrumbNav steps={breadcrumbs} />
-        <div className='flex flex-col gap-2.5'>
-          <h1 className='text-2xl md:text-3xl lg:text-4xl text-primary font-bold'>
-            {t("title")}
-          </h1>
-          <p className='text-sm lg:text-base'>{t("description")}</p>
-        </div>
-        <CategoryList />
-      </main>
+      <div className='w-full'>
+        <Header />
+        <main className='container mx-auto flex flex-col gap-10 py-10 px-5'>
+          <BreadcrumbNav steps={breadcrumbs} />
+          <div className='flex flex-col gap-2.5'>
+            <h1 className='text-2xl md:text-3xl lg:text-4xl text-primary font-bold'>
+              {t("title")}
+            </h1>
+            <p className='text-sm lg:text-base'>{t("description")}</p>
+          </div>
+          <CategoryList />
+        </main>
+      </div>
       <Footer />
     </div>
   );
