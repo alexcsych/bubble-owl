@@ -97,5 +97,20 @@
     "show-more": "Show more",
     "add-to-cart": "Add to",
     "products": "products"
+  },
+  "pagination": {
+    "next": "Next",
+    "previous": "Previous",
+    "aria-next": "Go to next page",
+    "aria-previous": "Go to previous page"
+  },
+  "filters": {
+    "status": "Status",
+    "flavor": "Flavor",
+    "dietary": "Dietary",
+    "all": "All",
+    "reset": "Reset filters",
+    "nothing-found": "Nothing found",
+    "nothing-found-description": "No products were found for your filters. Try changing your settings or resetting the filters."
   }
 }
