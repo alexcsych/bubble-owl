@@ -25,7 +25,10 @@ export default function HomeSection ({
   return (
     <section className='flex flex-col gap-4'>
       <h2 className='text-lg text-primary font-bold'>{t(title)}</h2>
-      <ItemList items={items} />
+      <ItemList
+        items={items}
+        className='[&_>_:nth-child(4)]:hidden sm:[&_>_:nth-child(4)]:flex 2xl:[&_>_:nth-child(4)]:hidden'
+      />
       <div className='w-full flex items-center gap-5'>
         <Separator className='flex-1 bg-primary' />
         <Button asChild variant='default'>

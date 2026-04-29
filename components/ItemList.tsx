@@ -20,12 +20,8 @@ export default function ItemList ({
       )}
       {...props}
     >
-      {items.map((item, index) => (
-        <ItemCard
-          key={item.id}
-          item={item}
-          className={cn(index === 3 ? "hidden sm:flex 2xl:hidden" : "")}
-        />
+      {items.map(item => (
+        <ItemCard key={item.id} item={item} />
       ))}
     </div>
   );
