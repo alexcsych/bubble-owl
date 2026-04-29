@@ -1,4 +1,3 @@
-import { ChevronDown } from "lucide-react";
 import ItemList from "@/components/ItemList";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
@@ -32,10 +31,7 @@ export default function HomeSection ({
       <div className='w-full flex items-center gap-5'>
         <Separator className='flex-1 bg-primary' />
         <Button asChild variant='default'>
-          <Link href={href}>
-            {tCommon(buttonText)}
-            <ChevronDown className='ml-2 size-4' />
-          </Link>
+          <Link href={href}>{tCommon(buttonText)}</Link>
         </Button>
         <Separator className='flex-1 bg-primary' />
       </div>
