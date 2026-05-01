@@ -38,7 +38,7 @@ export default function FilterDropdown ({
     .join(", ");
 
   return (
-    <DropdownMenu>
+    <DropdownMenu modal={false}>
       <DropdownMenuTrigger asChild>
         <Button variant='outline' size='sm' className='h-9 gap-2'>
           <Icon className='size-4 opacity-70' />
