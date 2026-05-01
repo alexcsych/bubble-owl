@@ -8,3 +8,12 @@ export type PrismaModel<T> = {
 export type ItemWithTags = Item & {
   tags: Tag[];
 };
+
+export type ItemWithQuantity = Item & {
+  quantity: number;
+};
+
+export type ItemWithTagsAndQuantity = Item & {
+  tags: Tag[];
+  quantity: number;
+};
