@@ -3,9 +3,8 @@ import { useLocale, useTranslations } from "next-intl";
 import { Locale } from "@/types/locale";
 import Image from "next/image";
 import { ItemWithTags } from "@/types/prisma";
-import { Button } from "./ui/button";
-import { ShoppingCart } from "lucide-react";
 import { S3_URL } from "@/constants/images";
+import AddItemToCartBtn from "./AddItemToCartBtn";
 
 interface ItemProps {
   item: ItemWithTags;
@@ -62,10 +61,7 @@ export default function ItemCard ({
               <span className='text-primary'>{item.price / 100} $</span>
             )}
           </div>
-          <Button variant={"outline"}>
-            {t("add-to-cart")}
-            <ShoppingCart className='size-4' />
-          </Button>
+          <AddItemToCartBtn itemId={item.id} text={t("add-to-cart")} />
         </div>
       </div>
     </div>
