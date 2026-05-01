@@ -112,5 +112,12 @@
     "reset": "Reset filters",
     "nothing-found": "Nothing found",
     "nothing-found-description": "No products were found for your filters. Try changing your settings or resetting the filters."
+  },
+  "cart-drawer": {
+    "cart": "Cart",
+    "title": "Shopping Cart",
+    "description": "Review your selected items and proceed to checkout.",
+    "continue-shopping": "Continue Shopping",
+    "checkout": "Checkout"
   }
 }
