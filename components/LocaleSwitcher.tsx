@@ -13,9 +13,10 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { usePathname, useRouter } from "@/i18n/navigation";
 import { useLocale, useTranslations } from "next-intl";
+import { Locale } from "@/types/locale";
 
 export default function LocaleSwitcher () {
-  const locale = useLocale();
+  const locale = useLocale() as Locale;
   const router = useRouter();
   const pathname = usePathname();
   const t = useTranslations("language-selector");

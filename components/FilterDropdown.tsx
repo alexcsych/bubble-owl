@@ -12,6 +12,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { ChevronDown, LucideIcon } from "lucide-react";
 import { useLocale } from "next-intl";
+import { Locale } from "@/types/locale";
 
 interface FilterDropdownProps {
   label: string;
@@ -30,7 +31,7 @@ export default function FilterDropdown ({
   icon: Icon,
   allLabel,
 }: FilterDropdownProps) {
-  const locale = useLocale();
+  const locale = useLocale() as Locale;
   const activeSlugs = value ? value.split(",") : [];
   const activeLabels = items
     .filter(i => activeSlugs.includes(i.slug))
