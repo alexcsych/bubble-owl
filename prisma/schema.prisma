@@ -195,6 +195,7 @@ model CartItem {
   userId    String
   item      Item     @relation(fields: [itemId], references: [id], onDelete: Cascade)
   user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
-
+  
+  @@unique([userId, itemId])
   @@map("cart_item")
 }
