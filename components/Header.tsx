@@ -2,6 +2,7 @@ import { Link } from "@/i18n/navigation";
 import Image from "next/image";
 import Nav from "@/components/Nav";
 import SearchBar from "@/components/SearchBar";
+import CartButton from "@/components/CartButton";
 import ThemeSwitcher from "@/components/ThemeSwitcher";
 import LocaleSwitcher from "@/components/LocaleSwitcher";
 import AuthButton from "@/components/AuthButton";
@@ -27,6 +28,7 @@ export default function Header () {
         <Nav items={MAIN_NAV} className='lg:flex lg:[&_a]:text-lg' />
         <SearchBar className='hidden xl:flex' />
         <div className='flex justify-between items-center gap-2.5'>
+          <CartButton />
           <ThemeSwitcher />
           <LocaleSwitcher />
           <AuthButton />
