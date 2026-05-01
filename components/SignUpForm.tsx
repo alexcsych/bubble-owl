@@ -14,6 +14,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useState } from "react";
 import { Controller, useForm } from "react-hook-form";
 import { Link, useRouter } from "@/i18n/navigation";
+import { useSearchParams } from "next/navigation";
 import { useTranslations } from "next-intl";
 import {
   getSignUpFormSchema,
@@ -27,6 +28,8 @@ export default function SignUpForm () {
   const [showPassword, setShowPassword] = useState(false);
   const t = useTranslations("signup-page");
   const tForm = useTranslations("form");
+  const searchParams = useSearchParams();
+  const destination = searchParams.get("callbackURL") || "/";
 
   const form = useForm<SignUpFormValues>({
     resolver: zodResolver(getSignUpFormSchema(tForm)),
@@ -40,7 +43,7 @@ export default function SignUpForm () {
       { name, email, password },
       {
         onSuccess: () => {
-          router.push("/");
+          router.push(destination);
         },
         onError: ctx => {
           const errorMessage =
@@ -191,7 +194,11 @@ export default function SignUpForm () {
         {t("login-link-desc")}{" "}
         <Link
           className='text-brand-purple font-bold hover:underline'
-          href='/login'
+          href={
+            destination
+              ? `/login?callbackURL=${encodeURIComponent(destination)}`
+              : `/login`
+          }
         >
           {t("login-link")}
         </Link>

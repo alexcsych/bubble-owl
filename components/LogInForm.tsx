@@ -15,19 +15,24 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useState } from "react";
 import { Controller, useForm } from "react-hook-form";
 import { Link, useRouter } from "@/i18n/navigation";
-import { useTranslations } from "next-intl";
+import { useSearchParams } from "next/navigation";
+import { useLocale, useTranslations } from "next-intl";
 import {
   getLogInFormSchema,
   LogInFormValues,
 } from "@/lib/schemas/login-form.shema";
 import { authClient } from "@/lib/auth-client";
 import { socialProviders } from "@/constants/providers";
+import { Locale } from "@/types/locale";
 
 export default function LogInForm () {
   const router = useRouter();
+  const locale = useLocale() as Locale;
   const [showPassword, setShowPassword] = useState(false);
   const t = useTranslations("login-page");
   const tForm = useTranslations("form");
+  const searchParams = useSearchParams();
+  const destination = searchParams.get("callbackURL") || "/";
 
   const form = useForm<LogInFormValues>({
     resolver: zodResolver(getLogInFormSchema(tForm)),
@@ -41,7 +46,7 @@ export default function LogInForm () {
       { email, password },
       {
         onSuccess: () => {
-          router.push("/");
+          router.push(destination);
         },
         onError: ctx => {
           form.resetField("password");
@@ -151,7 +156,12 @@ export default function LogInForm () {
                   key={id}
                   type='button'
                   variant='outline'
-                  onClick={() => authClient.signIn.social({ provider: id })}
+                  onClick={() =>
+                    authClient.signIn.social({
+                      provider: id,
+                      callbackURL: `/${locale}${destination}`,
+                    })
+                  }
                 >
                   <Icon className='size-4' />
                   {name}
@@ -165,7 +175,11 @@ export default function LogInForm () {
         {t("signup-link-desc")}{" "}
         <Link
           className='text-brand-purple font-bold hover:underline'
-          href='/signup'
+          href={
+            destination
+              ? `/signup?callbackURL=${encodeURIComponent(destination)}`
+              : `/signup`
+          }
         >
           {t("signup-link")}
         </Link>
