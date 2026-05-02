@@ -118,6 +118,10 @@
     "title": "Shopping Cart",
     "description": "Review your selected items and proceed to checkout.",
     "continue-shopping": "Continue Shopping",
-    "checkout": "Checkout"
+    "checkout": "Checkout",
+    "cart-empty": "Cart is empty",
+    "try-again": "Try again",
+    "failed-to-load-cart": "Failed to load cart",
+    "price-label": "Price:"
   }
 }

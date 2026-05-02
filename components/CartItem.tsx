@@ -5,7 +5,7 @@ import { useCartStore } from "@/store/useCartStore";
 import Image from "next/image";
 import { S3_URL } from "@/constants/images";
 import { Locale } from "@/types/locale";
-import { useLocale } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { cn } from "@/lib/utils";
 
 interface CartItemProps {
@@ -13,6 +13,7 @@ interface CartItemProps {
 }
 
 export default function CartItem ({ item }: CartItemProps) {
+  const t = useTranslations("cart-drawer");
   const locale = useLocale() as Locale;
   const increaseOrAddItem = useCartStore(state => state.increaseOrAddItem);
   const decreaseOrRemoveItem = useCartStore(
@@ -52,7 +53,7 @@ export default function CartItem ({ item }: CartItemProps) {
             {item[`name_${locale}`] || item.name_en}
           </p>
           <p className='flex gap-2.5 text-sm text-muted-foreground'>
-            Ціна:{" "}
+            {t("price-label")}{" "}
             {item.salePrice &&
             item.tags?.some(tag => tag.name_en === "Sale") ? (
               <>

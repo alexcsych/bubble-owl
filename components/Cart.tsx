@@ -89,19 +89,21 @@ export default function Cart () {
         {error ? (
           <div className='flex flex-col items-center gap-2 py-4'>
             <p className='text-center text-destructive'>
-              Не вдалося завантажити кошик
+              {t("failed-to-load-cart")}
             </p>
             <Button
               variant='outline'
               onClick={() => mutate(["/api/cart/fetchAndSync", localItems])}
               className='text-sm hover:text-primary'
             >
-              Спробувати ще раз
+              {t("try-again")}
             </Button>
           </div>
         ) : !items || items.length === 0 ? (
           !isLoading && (
-            <p className='text-center text-muted-foreground'>Кошик порожній</p>
+            <p className='text-center text-muted-foreground'>
+              {t("cart-empty")}
+            </p>
           )
         ) : (
           items.map((item: ItemWithTagsAndQuantity, index) => (
