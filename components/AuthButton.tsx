@@ -41,7 +41,9 @@ export default function AuthButton () {
         </Avatar>
       </DropdownMenuTrigger>
       <DropdownMenuContent align='end'>
-        <DropdownMenuLabel>{session.user.name}</DropdownMenuLabel>
+        <DropdownMenuLabel className='truncate'>
+          {session.user.name}
+        </DropdownMenuLabel>
         <DropdownMenuSeparator />
         <DropdownMenuItem asChild>
           <Link href='/profile'>{t("profile")}</Link>
