@@ -12,6 +12,7 @@ import {
 } from "@/components/ui/dialog";
 import CartItem from "@/components/CartItem";
 import Loader from "@/components/Loader";
+import CheckoutBtn from "@/components/CheckoutBtnProps";
 import { useTranslations } from "next-intl";
 import { useCartStore } from "@/store/useCartStore";
 import { ItemWithTagsAndQuantity } from "@/types/prisma";
@@ -47,7 +48,7 @@ export default function Cart () {
     isLoading,
     error,
   } = useSWR(
-    shouldFetch ? ["/api/cart/fetchAndSync", localItems] : null,
+    shouldFetch ? ["/api/cart/fetchAndSyncCart", localItems] : null,
     syncFetcher,
     {
       revalidateOnFocus: false,
@@ -64,15 +65,6 @@ export default function Cart () {
       },
     },
   );
-
-  const totalPrice =
-    items?.reduce((acc, item) => {
-      const isSale =
-        item.salePrice && item.tags?.some(tag => tag.name_en === "Sale");
-      const price = isSale ? item.salePrice : item.price;
-
-      return acc + price * item.quantity;
-    }, 0) || 0;
 
   return (
     <DialogContent>
@@ -123,18 +115,12 @@ export default function Cart () {
             {t("continue-shopping")}
           </Button>
         </DialogClose>
-        {!!items && items.length !== 0 && (
-          <DialogClose asChild>
-            <Button
-              variant='outline'
-              className={`${
-                isLoading || isPending ? "pointer-events-none" : ""
-              }`}
-            >
-              {`${t("checkout")} ${totalPrice / 100} $`}
-            </Button>
-          </DialogClose>
-        )}
+        <CheckoutBtn
+          items={items}
+          isLoading={isLoading}
+          isPending={isPending}
+          isAnonym={!session}
+        />
       </DialogFooter>
     </DialogContent>
   );
