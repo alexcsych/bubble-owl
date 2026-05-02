@@ -2,7 +2,7 @@ import prisma from "@/lib/db";
 import { auth } from "@/lib/auth";
 import { NextResponse } from "next/server";
 
-export async function POST (req: Request) {
+export async function DELETE (req: Request) {
   try {
     const session = await auth.api.getSession({ headers: req.headers });
 
@@ -10,38 +10,31 @@ export async function POST (req: Request) {
       return new NextResponse("Unauthorized", { status: 401 });
     }
 
-    const { itemId, quantity } = await req.json();
+    const { itemId } = await req.json();
 
     if (!itemId) {
       return new NextResponse("Item ID is required", { status: 400 });
     }
 
-    if (!quantity) {
-      return new NextResponse("Quantity is required", { status: 400 });
-    }
-
     const userId = session.user.id;
 
-    const cartItem = await prisma.cartItem.upsert({
+    const deleteResult = await prisma.cartItem.deleteMany({
       where: {
-        userId_itemId: {
-          userId,
-          itemId,
-        },
-      },
-      update: {
-        quantity: { increment: quantity },
-      },
-      create: {
         userId,
         itemId,
-        quantity,
       },
     });
 
-    return NextResponse.json(cartItem);
+    if (deleteResult.count === 0) {
+      return new NextResponse("Item not found in cart", { status: 404 });
+    }
+
+    return NextResponse.json(
+      { message: "Item removed from cart" },
+      { status: 200 },
+    );
   } catch (error) {
-    console.error("[CART_ADD_ERROR]", error);
+    console.error("[CART_REMOVE_ERROR]", error);
     return new NextResponse("Internal Error", { status: 500 });
   }
 }

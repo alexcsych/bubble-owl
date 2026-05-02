@@ -34,8 +34,11 @@ export async function GET (request: Request) {
 
   const totalPages = Math.ceil(totalItems / PRODUCTS_PER_PAGE);
 
-  return NextResponse.json({
-    items: items,
-    totalPages: totalPages,
-  });
+  return NextResponse.json(
+    {
+      items: items,
+      totalPages: totalPages,
+    },
+    { status: 200 },
+  );
 }

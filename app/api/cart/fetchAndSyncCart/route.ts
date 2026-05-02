@@ -63,7 +63,7 @@ export async function POST (req: Request) {
       quantity: ci.quantity,
     }));
 
-    return NextResponse.json(synchronizedCart);
+    return NextResponse.json(synchronizedCart, { status: 200 });
   } catch (error) {
     console.error("[CART_FETCH_SYNC_ERROR]", error);
     return new NextResponse("Internal Error", { status: 500 });

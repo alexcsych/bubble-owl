@@ -43,7 +43,10 @@ export async function POST (req: Request) {
       await prisma.cartItem.delete({
         where: { id: existingCartItem.id },
       });
-      return NextResponse.json({ message: "Item removed from cart" });
+      return NextResponse.json(
+        { message: "Item removed from cart" },
+        { status: 200 },
+      );
     }
   } catch (error) {
     console.error("[CART_REMOVE_ERROR]", error);
