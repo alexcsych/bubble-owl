@@ -25,7 +25,8 @@
       "email-taken": "Ця пошта вже зайнята. Можливо, ви вже зареєстровані?",
       "something-went-wrong": "Щось пішло не так. Будь ласка, спробуйте пізніше.",
       "invalid-credentials": "Неправильна пошта або пароль."
-    }
+    },
+    "save-changes": "Зберегти зміни"
   },
   "language-selector": {
     "language": "Мова",
@@ -122,6 +123,7 @@
     "cart-empty": "Кошик порожній",
     "try-again": "Спробувати ще раз",
     "failed-to-load-cart": "Не вдалося завантажити кошик",
-    "price-label": "Ціна:"
+    "price-label": "Ціна:",
+    "in-cart": "В кошику"
   }
 }

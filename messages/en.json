@@ -25,7 +25,8 @@
       "email-taken": "This email is already registered. Maybe you want to log in?",
       "something-went-wrong": "Something went wrong. Please try again later.",
       "invalid-credentials": "Invalid email or password."
-    }
+    },
+    "save-changes": "Save changes"
   },
   "language-selector": {
     "language": "Language",
@@ -122,6 +123,7 @@
     "cart-empty": "Cart is empty",
     "try-again": "Try again",
     "failed-to-load-cart": "Failed to load cart",
-    "price-label": "Price:"
+    "price-label": "Price:",
+    "in-cart": "In cart"
   }
 }
