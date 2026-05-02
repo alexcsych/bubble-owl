@@ -41,7 +41,7 @@ export default function LogInForm () {
 
   const { isSubmitting } = form.formState;
 
-  async function onSubmit ({ email, password }: LogInFormValues) {
+  const onSubmit = async ({ email, password }: LogInFormValues) => {
     await authClient.signIn.email(
       { email, password },
       {
@@ -63,7 +63,7 @@ export default function LogInForm () {
         },
       },
     );
-  }
+  };
 
   return (
     <div className='w-full max-w-md border rounded-2xl p-6 shadow-xl/30 shadow-brand-purple space-y-4'>
@@ -88,6 +88,7 @@ export default function LogInForm () {
                       id='email'
                       placeholder={tForm("placeholders.email")}
                       aria-invalid={fieldState.invalid}
+                      autoComplete='email'
                     />
                     {fieldState.invalid && (
                       <FieldError errors={[fieldState.error]} />
@@ -112,6 +113,7 @@ export default function LogInForm () {
                         placeholder={tForm("placeholders.password")}
                         className='pr-8'
                         aria-invalid={fieldState.invalid}
+                        autoComplete='off'
                       />
                       <button
                         type='button'

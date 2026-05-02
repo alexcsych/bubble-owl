@@ -38,7 +38,7 @@ export default function SignUpForm () {
 
   const { isSubmitting } = form.formState;
 
-  async function onSubmit ({ name, email, password }: SignUpFormValues) {
+  const onSubmit = async ({ name, email, password }: SignUpFormValues) => {
     await authClient.signUp.email(
       { name, email, password },
       {
@@ -57,7 +57,7 @@ export default function SignUpForm () {
         },
       },
     );
-  }
+  };
 
   return (
     <div className='w-full max-w-md border rounded-2xl p-6 shadow-xl/30 shadow-brand-purple space-y-4'>
@@ -82,6 +82,7 @@ export default function SignUpForm () {
                       id='name'
                       placeholder={tForm("placeholders.name")}
                       aria-invalid={fieldState.invalid}
+                      autoComplete='name'
                     />
                     {fieldState.invalid && (
                       <FieldError errors={[fieldState.error]} />
@@ -103,6 +104,7 @@ export default function SignUpForm () {
                       id='email'
                       placeholder={tForm("placeholders.email")}
                       aria-invalid={fieldState.invalid}
+                      autoComplete='email'
                     />
                     {fieldState.invalid && (
                       <FieldError errors={[fieldState.error]} />
@@ -127,6 +129,7 @@ export default function SignUpForm () {
                         placeholder={tForm("placeholders.password")}
                         className='pr-8'
                         aria-invalid={fieldState.invalid}
+                        autoComplete='off'
                       />
                       <button
                         type='button'
