@@ -134,6 +134,8 @@
   }
   * {
     @apply border-border outline-ring/50;
+    scrollbar-color: var(--color-brand-purple) var(--background);
+    scrollbar-width: thin;
   }
   body {
     @apply bg-background text-foreground;
