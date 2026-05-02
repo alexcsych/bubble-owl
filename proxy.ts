@@ -18,8 +18,22 @@ export default async function proxy (request: NextRequest) {
       headers: request.headers,
     });
 
-    if (session && (pathname === "/login" || pathname === "/signup")) {
+    const redirectedRoutes = ["/login", "/signup"];
+    const isRedirectedRoute = redirectedRoutes.some(route =>
+      pathname.startsWith(route),
+    );
+    if (session && isRedirectedRoute) {
       return NextResponse.redirect(new URL(`/${locale}`, request.url));
+    }
+
+    const protectedRoutes = ["/profile"];
+    const isProtectedRoute = protectedRoutes.some(route =>
+      pathname.startsWith(route),
+    );
+    if (!session && isProtectedRoute) {
+      const loginUrl = new URL(`/${locale}/login`, request.url);
+      loginUrl.searchParams.set("callbackURL", request.nextUrl.pathname);
+      return NextResponse.redirect(loginUrl);
     }
   }
 
