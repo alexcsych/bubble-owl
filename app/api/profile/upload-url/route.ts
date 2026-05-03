@@ -21,7 +21,6 @@ export async function POST (req: Request) {
 
   const signedUrl = await getSignedUrl(s3, command, { expiresIn: 60 });
   const publicUrl = `${process.env.NEXT_PUBLIC_S3_URL}/${fileKey}`;
-  console.log(publicUrl);
 
   return NextResponse.json({ signedUrl, publicUrl });
 }
