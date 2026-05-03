@@ -12,7 +12,7 @@ import {
 } from "@/components/ui/dialog";
 import CartItem from "@/components/CartItem";
 import Loader from "@/components/Loader";
-import CheckoutBtn from "@/components/CheckoutBtnProps";
+import CheckoutBtn from "@/components/CheckoutBtn";
 import { useTranslations } from "next-intl";
 import { useCartStore } from "@/store/useCartStore";
 import { ItemWithTagsAndQuantity } from "@/types/prisma";
