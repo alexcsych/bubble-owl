@@ -14,20 +14,18 @@ import { Input } from "@/components/ui/input";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useState } from "react";
 import { Controller, useForm } from "react-hook-form";
-import { Link, useRouter } from "@/i18n/navigation";
-import { useSearchParams } from "next/navigation";
-import { useLocale, useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
+import { useTranslations } from "next-intl";
 import {
   getLogInFormSchema,
   LogInFormValues,
 } from "@/lib/schemas/login-form.shema";
 import { authClient } from "@/lib/auth-client";
 import { socialProviders } from "@/constants/providers";
-import { Locale } from "@/types/locale";
 
 export default function LogInForm () {
   const router = useRouter();
-  const locale = useLocale() as Locale;
   const [showPassword, setShowPassword] = useState(false);
   const t = useTranslations("login-page");
   const tForm = useTranslations("form");
@@ -161,7 +159,7 @@ export default function LogInForm () {
                   onClick={() =>
                     authClient.signIn.social({
                       provider: id,
-                      callbackURL: `/${locale}${destination}`,
+                      callbackURL: destination,
                     })
                   }
                 >

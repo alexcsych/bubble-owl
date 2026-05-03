@@ -13,8 +13,8 @@ import { Input } from "@/components/ui/input";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useState } from "react";
 import { Controller, useForm } from "react-hook-form";
-import { Link, useRouter } from "@/i18n/navigation";
-import { useSearchParams } from "next/navigation";
+import { Link } from "@/i18n/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import { useTranslations } from "next-intl";
 import {
   getSignUpFormSchema,

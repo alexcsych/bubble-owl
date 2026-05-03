@@ -2,9 +2,9 @@
 
 import { Button } from "@/components/ui/button";
 import { CircleUserRound } from "lucide-react";
-import { useSearchParams } from "next/navigation";
+import { usePathname, useSearchParams } from "next/navigation";
 import { AUTH_ROUTES } from "@/constants/auth";
-import { Link, usePathname } from "@/i18n/navigation";
+import { Link } from "@/i18n/navigation";
 import { useTranslations } from "next-intl";
 
 export default function LogInBtn () {

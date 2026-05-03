@@ -2,10 +2,10 @@ import React from "react";
 import { DialogClose } from "./ui/dialog";
 import { Button } from "./ui/button";
 import { ItemWithTagsAndQuantity } from "@/types/prisma";
-import { usePathname, useRouter } from "@/i18n/navigation";
+import { useRouter } from "@/i18n/navigation";
 import { useCartStore } from "@/store/useCartStore";
 import { useTranslations } from "next-intl";
-import { useSearchParams } from "next/navigation";
+import { usePathname, useSearchParams } from "next/navigation";
 import { AUTH_ROUTES } from "@/constants/auth";
 
 interface CheckoutBtnProps {
