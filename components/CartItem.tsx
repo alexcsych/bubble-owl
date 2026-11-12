@@ -7,6 +7,7 @@ import { S3_URL } from "@/constants/images";
 import { Locale } from "@/types/locale";
 import { useLocale, useTranslations } from "next-intl";
 import { cn } from "@/lib/utils";
+import { usePostHog } from "posthog-js/react";
 
 interface CartItemProps {
   item: ItemWithTagsAndQuantity;
@@ -21,15 +22,38 @@ export default function CartItem ({ item }: CartItemProps) {
   );
   const removeItem = useCartStore(state => state.removeItem);
 
+  const posthog = usePostHog();
+  const itemProperties = {
+    product_id: item.id,
+    product_name: item.name_en,
+    current_price: item.salePrice || item.price,
+  };
+
   const handleIncreaseClick = async () => {
+    posthog.capture('cart_item_quantity_increased', {
+      ...itemProperties,
+      new_quantity: item.quantity + 1
+    });
+
     await increaseOrAddItem(item.id);
   };
 
   const handleDecreaseOrRemoveClick = async () => {
+    posthog.capture('cart_item_quantity_decreased', {
+      ...itemProperties,
+      new_quantity: item.quantity - 1,
+      action_type: item.quantity === 1 ? 'removed_via_decrease' : 'decreased'
+    });
+
     await decreaseOrRemoveItem(item.id);
   };
 
   const handleRemoveClick = async () => {
+    posthog.capture('cart_item_removed_completely', {
+      ...itemProperties,
+      quantity_before_remove: item.quantity
+    });
+
     await removeItem(item.id);
   };
 

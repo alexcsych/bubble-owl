@@ -27,6 +27,8 @@ services:
       args:
         - NEXT_PUBLIC_S3_URL=${NEXT_PUBLIC_S3_URL}
         - DATABASE_URL=${DATABASE_URL}
+        - NEXT_PUBLIC_POSTHOG_PROJECT_TOKEN=${NEXT_PUBLIC_POSTHOG_PROJECT_TOKEN}
+        - NEXT_PUBLIC_POSTHOG_HOST=${NEXT_PUBLIC_POSTHOG_HOST}
     container_name: bubble-owl-app
     restart: always
     ports:

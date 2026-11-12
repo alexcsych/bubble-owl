@@ -7,6 +7,7 @@ import { useCartStore } from "@/store/useCartStore";
 import { Dialog, DialogTrigger } from "@/components/ui/dialog";
 import Cart from "@/components/Cart";
 import { useTranslations } from "next-intl";
+import { usePostHog } from "posthog-js/react";
 
 interface AddItemToCartBtnProps {
   itemId: number;
@@ -23,6 +24,7 @@ export default function AddItemToCartBtn ({
   const t = useTranslations("cart-drawer");
   const items = useCartStore(state => state.items);
   const increaseOrAddItem = useCartStore(state => state.increaseOrAddItem);
+  const posthog = usePostHog();
 
   const isInCart = items.some(i => i.itemId === itemId);
 
@@ -30,7 +32,17 @@ export default function AddItemToCartBtn ({
     if (!isInCart) {
       e.preventDefault();
       e.stopPropagation();
+
+      posthog.capture('cart_item_added', {
+        product_id: itemId,
+        action_type: 'initial_add'
+      });
+
       await increaseOrAddItem(itemId);
+    }else {
+      posthog.capture('cart_drawer_opened_via_product_button', {
+        product_id: itemId
+      });
     }
   };
 

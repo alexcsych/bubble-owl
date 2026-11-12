@@ -14,15 +14,23 @@ import {
 import { usePathname, useRouter } from "@/i18n/navigation";
 import { useLocale, useTranslations } from "next-intl";
 import { Locale } from "@/types/locale";
+import { usePostHog } from "posthog-js/react";
 
 export default function LocaleSwitcher () {
   const locale = useLocale() as Locale;
   const router = useRouter();
   const pathname = usePathname();
   const t = useTranslations("language-selector");
+  const posthog = usePostHog();
 
   const switchLocale = (newLocale: string) => {
     if (newLocale !== locale) {
+      posthog.capture('language_changed', {
+        new_language: newLocale,
+        previous_language: locale,
+        path: pathname
+      });
+
       router.replace(pathname, { locale: newLocale, scroll: false });
       router.refresh();
     }

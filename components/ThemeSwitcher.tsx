@@ -13,10 +13,21 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { useTranslations } from "next-intl";
+import { usePostHog } from "posthog-js/react";
 
 export default function ThemeSwitcher () {
   const { theme, setTheme } = useTheme();
   const t = useTranslations("theme-selector");
+  const posthog = usePostHog();
+
+  const handleThemeChange = (newTheme: string) => {
+    posthog.capture('theme_changed', {
+      new_theme: newTheme,
+      previous_theme: theme || 'unknown'
+    });
+
+    setTheme(newTheme);
+  };
 
   return (
     <DropdownMenu>
@@ -29,7 +40,7 @@ export default function ThemeSwitcher () {
       <DropdownMenuContent className='w-48'>
         <DropdownMenuLabel>{t("theme-select")}</DropdownMenuLabel>
         <DropdownMenuSeparator />
-        <DropdownMenuRadioGroup onValueChange={setTheme} value={theme}>
+        <DropdownMenuRadioGroup onValueChange={handleThemeChange} value={theme}>
           <DropdownMenuRadioItem value='light'>
             <Sun />
             {t("themes.light")}

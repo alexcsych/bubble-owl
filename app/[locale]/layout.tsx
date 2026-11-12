@@ -6,6 +6,7 @@ import { setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
 import CustomThemeProvider from "@/components/CustomThemeProvider";
+import { CSPostHogProvider } from "@/components/CSPostHogProvider";
 
 type Props = {
   children: React.ReactNode;
@@ -45,9 +46,11 @@ export default async function LocaleLayout ({ children, params }: Props) {
       className={`${comfortaa.variable} h-full antialiased`}
     >
       <body className='min-h-full flex flex-col'>
-        <NextIntlClientProvider>
-          <CustomThemeProvider>{children}</CustomThemeProvider>
-        </NextIntlClientProvider>
+        <CSPostHogProvider>
+          <NextIntlClientProvider>
+            <CustomThemeProvider>{children}</CustomThemeProvider>
+          </NextIntlClientProvider>
+        </CSPostHogProvider>
       </body>
     </html>
   );

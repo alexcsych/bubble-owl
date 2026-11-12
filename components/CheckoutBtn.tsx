@@ -7,6 +7,7 @@ import { useCartStore } from "@/store/useCartStore";
 import { useTranslations } from "next-intl";
 import { usePathname, useSearchParams } from "next/navigation";
 import { AUTH_ROUTES } from "@/constants/auth";
+import { usePostHog } from "posthog-js/react";
 
 interface CheckoutBtnProps {
   items: ItemWithTagsAndQuantity[] | undefined;
@@ -26,6 +27,7 @@ export default function CheckoutBtn ({
   const clearCart = useCartStore(state => state.clearCart);
   const pathname = usePathname();
   const searchParams = useSearchParams();
+  const posthog = usePostHog();
   const currentParams = searchParams.toString();
   const isAuthPage = AUTH_ROUTES.some(route => pathname.includes(route));
   let loginHref = `/login`;
@@ -50,14 +52,25 @@ export default function CheckoutBtn ({
         item.salePrice && item.tags?.some(tag => tag.slug === "sale");
       const price = isSale ? item.salePrice : item.price;
 
-      return acc + price * item.quantity;
+      return acc + (price * item.quantity);
     }, 0) || 0;
 
   const handleCheckout = async () => {
     if (isAnonym) {
+      posthog.capture('checkout_redirect_to_login', {
+        cart_total_amount: totalPrice / 100,
+        cart_items_count: items?.length || 0
+      });
+
       router.push(loginHref);
       return;
     }
+
+    posthog.capture('checkout_started', {
+      cart_total_amount: totalPrice / 100,
+      cart_items_count: items?.length || 0,
+      item_ids: items?.map(item => item.id)
+    });
 
     await clearCart();
   };
